@@ -1,0 +1,4 @@
+wallpaper {
+    path = ~/.local/share/wallpapers/wal.png
+    fit_mode = cover
+}

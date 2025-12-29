@@ -1,0 +1,83 @@
+/* ~/.config/waybar/style.css */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-size: 13px;
+    min-height: 0;
+}
+
+label {
+    font-family: "JetBrainsMono Nerd Font Mono";
+}
+
+
+/*window#waybar {
+    background-color: #282a36;
+    color: #f8f8f2;
+    opacity: 0.9;
+}*/
+
+
+window#waybar {
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-size: 13px;
+    background-color: rgba(40, 42, 54, 0.85);
+    color: #f8f8f2;
+}
+
+
+/* Stile per i pulsanti dei workspace */
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #6272a4;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    font-weight: bold;
+    background-color: #44475a;
+    color: #ff79c6;
+    border-bottom: 2px solid #bd93f9;
+}
+
+#workspaces button.urgent {
+    background-color: #ff5555;
+}
+
+#custom-tailscale {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#custom-tailscale.connected {
+    color: #a6e3a1; /* verde */
+}
+
+#custom-tailscale.disconnected {
+    color: #f38ba8; /* rosso */
+}
+
+#custom-tailscale.disabled {
+    color: #6c7086; /* grigio */
+}
+
+#custom-tailscale.unknown {
+    color: #f9e2af; /* giallo */
+}
+
+/* Stile per i moduli sulla destra */
+#custom.keymap,
+#pulseaudio,
+#memory,
+#battery,
+#network,
+#clock {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#clock {
+    font-weight: bold;
+}
