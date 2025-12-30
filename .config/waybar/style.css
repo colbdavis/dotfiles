@@ -67,6 +67,22 @@ window#waybar {
     color: #f9e2af; /* giallo */
 }
 
+#custom-ai-servers {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+/* Stato ON */
+#custom-ai-servers.running {
+    color: #a6e3a1; /* stesso verde di tailscale connected */
+}
+
+/* Stato OFF */
+#custom-ai-servers.stopped {
+    color: #f38ba8; /* stesso rosso di tailscale disconnected */
+}
+
+
 /* Stile per i moduli sulla destra */
 #custom.keymap,
 #pulseaudio,
