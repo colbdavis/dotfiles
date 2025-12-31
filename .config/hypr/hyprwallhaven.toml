@@ -1,7 +1,0 @@
-wallpaper_cmd = 'hyprctl hyprpaper preload %f; hyprctl hyprpaper wallpaper "%m,%f"'
-save_dir = "~/Pictures/Wallpapers/Wallhaven"
-categories = "111"
-purity = "100"
-sorting = "hot"
-ratios = "landscape"
-wallpaper_mode = "contain"
