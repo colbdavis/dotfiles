@@ -214,6 +214,9 @@ eval "$(zoxide init zsh)"
 
 alias cd='z'
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias doco='docker compose'
+alias grhist='cat ~/.config/zsh/history | grep'
+alias fuzzhist='cat ~/.config/zsh/history | fzf'
 
 cat ~/README.md
