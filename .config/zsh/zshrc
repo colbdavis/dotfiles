@@ -219,4 +219,6 @@ alias doco='docker compose'
 alias grhist='cat ~/.config/zsh/history | grep'
 alias fuzzhist='cat ~/.config/zsh/history | fzf'
 
+export PATH="$HOME/.local/bin:$PATH"
+
 cat ~/README.md
