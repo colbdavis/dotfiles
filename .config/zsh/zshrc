@@ -213,6 +213,7 @@ eval "$(zoxide init zsh)"
 # fortune | cowsay -r echo "
 
 alias cd='z'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias doco='docker compose'
 
-cat ~/todo.md
+cat ~/README.md

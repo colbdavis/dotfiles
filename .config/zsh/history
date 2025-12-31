@@ -1,0 +1,1580 @@
+touch .config/zsh/history
+	nvim .config/zsh/zshrc
+fzf
+sudo pacman -S fzf
+zoxide init
+zoxide init zsh
+nvim .config/zsh/zshrc
+z .config/zsh
+z sh
+cd
+z
+z sh
+z zinit
+cd
+z .local/bin/zinit
+z
+z init
+z
+nvim
+nvim .config/zsh/zshrc
+z .config/hypr
+nvim hyprland.conf
+paru
+pacman -S hyprpaper hyprpicker hypridle hyprlock hyprsunset hyprpolkitagent hyprland-qt-support hyprqt6engine hyprcenter hyprshutdown
+sudo pacman -S hyprpaper hyprpicker hypridle hyprlock hyprsunset hyprpolkitagent hyprland-qt-support hyprqt6engine hyprcenter hyprshutdown
+sudo pacman -S hyprpaper hyprpicker hypridle hyprlock hyprsunset hyprpolkitagent hyprland-qt-support 
+sudo pacman -S waybar
+nvim .config/zsh/zshrc
+nvim TODO.md
+nvim .config/zsh/zshrc
+nvim TODO.md
+nvim .config/zsh/zshrc
+nvim TODO.md \ 
+nvim TODO.md 
+mkdir .config/waybar
+z .config/waybar
+nvim config
+waybar
+nvim config
+cd
+waybar
+nvim
+fg
+nvim TODO.md 
+paru awesome-font
+paru font-awesome
+waybar
+nvim .config/waybar/config
+waybar
+nvim .config/waybar/config
+waybar
+paru hyprqt6engine hyprcenter hyprshutdown 
+nvim .config/hypr/hyprland.conf
+nvim .config/waybar/config
+z way
+cp config config.jsc
+nvim config.jsc
+mv config.jsc config.jsonc
+nvim config.jsonc
+waybar
+cp config.jsonc config
+waybar
+z
+nvim .config/waybar/config
+waybar
+z way
+cat config
+z
+nvim .config/waybar/config
+waybar
+nvim .config/waybar/config
+waybar
+nvim .config/waybar/config
+way
+waybar
+flatpak install keepassxc
+ls notes | grep Password
+nvim T
+mv TODO.md todo.md
+nvim todo.md
+nvim .config/hypr/hyprland.conf
+nvim .config/zsh/zshrc
+nvim .config/hypr/hyprland.conf
+htop
+mkdir Downloads
+z Downloads
+git clone https://github.com/xZepyx/HyprZepyx
+paru 
+paru yara
+paru yazi
+yazu
+yazi
+waybar
+yazi
+waybar
+ls /sys/class/backlight/
+cat /sys/class/backlight/amdgpu_bl1/brightness
+cat /sys/class/backlight/amdgpu_bl1/max_brightness
+sudo  echo 500 | sudo tee /sys/class/backlight/amdgpu-bl1/brightness
+sudo echo 40000 > /sys/class/backlight/amdgpu_bl1/brightness
+pacman -S brightnessctl
+sudo pacman -S brightnessctl
+cat /sys/class/backlight/amdgpu_bl1/brightness
+yazi
+z way
+nvim confifg
+waybar
+yazi
+waybar
+z way
+nvim config
+mv config config.jsonc
+nvim config.css
+nvim style.css
+waybar
+z
+nvim todo.md
+z way
+nvim style.css
+waybar
+paru Jetbrains-Nerd
+sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-emoji\
+
+nvim style.css
+waybar
+nvim config.jsonc
+waybar
+nvim style.css
+waybar
+nvim style.css
+waybar
+fc-list | grep -i jetbrains\
+
+nvim style.css
+waybar
+locale\
+
+pkill waybar
+waybar
+nvim style.css
+waybar
+nvim config.jsonc
+waybar
+nvim .config/waybar/config.jsonc
+cat .config/waybar/config.jsonc
+z way
+mv config.jsonc confignoroot.jsonc
+nvim config.jsonc
+waybar
+nvim config.jsonc
+waybar
+z hy
+nvim hyprland.conf
+poweroff
+ru
+paru
+nvim .config/waybar/style.css
+pkill waybar
+waybar
+nvim .config/waybar/style.css
+pkill waybar
+waybar
+nvim t
+nvim todo.md
+pacman -S nautilus
+sudo pacman -S nautilus
+nautilus
+nvim .config/hypr/hyprland.conf
+pacman -S grim slurp
+sudo pacman -S grim slurp
+paru hyprshot
+paru swaync
+swaync
+htop
+ps aux | grep -E "dunst|mako|notify"\
+
+nvim .config/hypr/hyprland.conf
+sudo pacman -R dunst
+nvim .config/hypr/hyprland.conf
+hyprshot -m window
+systemctl --user status xdg-desktop-portal-hyprland\
+
+notify-send -a LibreWolf "Test" "Notifica da LibreWolf"\
+
+swaync-client -l
+flatpak --version\
+
+ls /var/lib/flatpak/exports/share/icons/hicolor/*/apps | grep librewolf\
+ù
+mkdir .config/enviroment.d	
+z .config/enviroment.d
+nvim flatpak.conf
+cat flatpak.conf
+notify-send -a LibreWolf "Test" "Notifica da LibreWolf"\
+
+echo $XDG_DATA_DIRS\
+
+rm -rf .config/enviroment.d
+notify-send -i io.gitlab.librewolf-community "Test" "Icona Flatpak system"\
+
+mkdir -p ~/.config/waybar/scripts\
+nano ~/.config/waybar/scripts/kbd_toggle.sh\
+
+nvim .config/waybar/scripts/kbd_toggle.sh
+chmod +x ~/.config/waybar/scripts/kbd_toggle.sh\
+
+sudo pacman -S jq
+nvim .config/waybar/config
+nvim .config/waybar/config.jsonc
+chmod +x ~/.config/waybar/scripts/kbd_toggle.sh\
+
+nvim .config/waybar/scripts/kbd_toggle.sh
+pkill waybarù
+pkill waybar
+nvim .config/waybar/scripts/keymap.sh
+nvim .config/waybar/config
+nvim .config/waybar/config.jsonc
+pkill waybar
+waybar
+chmod +x ~/.config/waybar/scripts/keymap.sh\
+
+waybar
+z way
+nvim
+yazi
+cp config.jsonc backconfig.jsonc
+nvim 
+waybar
+pkill waybar
+waybar
+fg
+waybar
+z hy
+nvim hyprland.conf
+htop
+fg
+nvim hyprland.conf
+nvim hyprpaper.conf
+yazi
+z /loc
+z .local/share/wallpapers/Catppuccin
+pwd
+z cat
+pwd
+ls
+hyprpaper
+pkill hyprpaper
+hyprpaper
+z hy
+ls
+z wal
+z .local/share/wallpapers/
+z
+z wal
+z wall
+pwd
+z .local/share/wallpapers/
+ln ./Catppuccin/Ca.png wal.png
+z hypr
+nvim 
+z wall
+ls
+ls -lah
+pkill hyprpaper
+hyprpaper
+z hypr
+nvim hyprpaper.ini
+yazu
+yazi
+hyprpaper
+hyprctl monitors\
+
+hyprpaper --config ~/.config/hypr/hyprpaper.ini
+z hypr
+nvim hyprlock.conf
+z hypr
+nvim hyprlock.conf
+hyprlock
+nvim hyprland.conf
+nvim hypridle.conf
+mv hypridle.conf defhypridle.conf
+mv defhypridle.conf hypridle.conf
+nvim hypridle.conf
+nvim hyprland.conf
+paru
+pacman -S pavucontrol bluez bluez-utils blueman
+sudo pacman -S pavucontrol bluez bluez-utils blueman
+sudo systemctl enable --now bluetooth.service
+sudo systemctl status bluetooth.service
+nvim .config/hypr/hyprland.conf
+blueman-applet &\
+
+cat ~/.config/user-dirs.dirs\
+
+xdg-user-dirs-update\
+
+cat ~/.config/user-dirs.dirs\
+
+nvim .config/hypr/hyprland.conf
+nvim .config/waybar/config.jsonc
+pgrep -a blueman-applet\
+
+pkill waybar
+nvim .config/waybar/config.jsonc
+nvim t
+nvim todo.md
+paru
+sudo pacman -S tailscale
+sudo systemctl start tailscale.service
+sudo systemctl start tailscaled
+sudo tailscale up
+nvim .config/zsh/zshrc
+z notes/markor/i
+z notes/markor/it
+nvim Chat-Hyprland-Context.md
+paru glow
+glow 
+z it
+cd --help
+cd -h
+nautilus .
+cd
+mkdir .config/gtk-3.0
+nautilus .
+mkdir .config/gtk-3.0/bookmarks
+nautilus .
+z cf
+z confi
+z .config/
+z gtk-3.0
+rm -rf bookmarks
+z
+z way
+nvim scripts/tailscale-status.sh
+cat scripts/tailscale-status.sh
+yazi
+chmod +x scripts/tailscale-status.sh
+nvim config.jsonc
+nvim style.css
+sudo systemctl enable tailscaled
+nvim scripts/tailscale-status.sh
+nvim scripts/tailscale-toggle.sh
+nvim scripts/tailscale-status.sh
+cat scripts/tailscale-status.sh
+cat scripts/tailscale-toggle.sh
+nvim scripts/tailscale-monitor.sh
+chmod +x ~/.config/waybar/scripts/tailscale-status.sh\
+chmod +x ~/.config/waybar/scripts/tailscale-toggle.sh\
+chmod +x ~/.config/waybar/scripts/tailscale-monitor.sh
+nvim config.jsonc
+flatpak install vscodium
+flatpak list --runtime\
+
+sudo pacman -S python
+which wofi
+tailscale status
+z way
+nautilus .
+echo -e "Sì\nNo" | wofi --dmenu --prompt "Test?"
+mv scripts/tailscale-toggle.sh scripts/tailscale-toggle.sh.nolog
+nvim scripts/tailscale-toggle.sh
+chmox +x scripts/tailscale-toggle.sh
+chmod +x scripts/tailscale-toggle.sh
+\
+~/.config/waybar/scripts/tailscale-toggle.sh
+cat /tmp/tailscale-toggle.log
+sudo tailscale set --operator=$USER
+nvim scripts/tailscale-toggle.sh
+\
+~/.config/waybar/scripts/tailscale-toggle.sh
+sudo visudo -f /etc/sudoers.d/tailscale
+sudo EDITOR=nvim visudo -f /etc/sudoers.d/tailscale
+nvim scripts/tailscale-toggle.sh
+tailscale status
+nvim todo.md
+z it
+nvim Chat-Hyprland-Context.md
+glow ./Chat-Hyprland-Context.md
+nvim todo.md
+git init --bare $HOME/.dotfiles\
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles config --local status.showUntrackedFiles no\
+
+otfiles add ~/.config/waybar/config.jsonc\
+dotfiles add ~/.config/waybar/style.css\
+dotfiles add ~/.config/waybar/scripts/\
+dotfiles add ~/.config/hypr/hyprland.conf\
+dotfiles add ~/.config/hypr/hyprpaper.conf\
+dotfiles add ~/.config/swaync/\
+dotfiles add ~/.config/wofi/
+dotfiles add ~/.config/waybar/config.jsonc
+dotfiles commit -m "Initial dotfiles commit"
+# Creare ~/.dotfiles/.gitignore\
+cat > ~/.dotfiles/.gitignore << 'EOF'\
+# File sensibili\
+*.log\
+*.tmp\
+*.swp\
+*~\
+.secret\
+.ssh/\
+.gnupg/\
+.password-store/\
+\
+# Cache e file temporanei\
+.cache/\
+.local/\
+.var/\
+\
+# Applicazioni specifiche\
+.mozilla/\
+.vscode/\
+.steam/\
+.thumbnails/\
+\
+# Sistema\
+Downloads/\
+Documents/\
+Pictures/\
+Videos/\
+Music/\
+Desktop/\
+notes/\
+EOF
+cat > ~/.dotfiles/.gitignore << 'EOF'\
+*.log\
+*.tmp\
+*.swp\
+*~\
+.secret\
+.ssh/\
+.gnupg/\
+.password-store/\
+\
+.cache/\
+.local/\
+.var/\
+\
+.mozilla/\
+.vscode/\
+.steam/\
+.thumbnails/\
+\
+Downloads/\
+Documents/\
+Pictures/\
+Videos/\
+Music/\
+Desktop/\
+notes/\
+EOF
+cat .dotfiles/.gi
+cat .dotfiles/.gitignore
+nvim .dotfiles/.gitignore
+yazi
+nmtui
+pacman -S github
+sudo !
+sudo sudo !
+sudo pacman -S github
+paru github
+paru github | head
+paru github-cli | head
+gh auth login
+pacman -S github-cli
+sudo pacman -S github-cli
+sudo rm /var/lib/pacman/db.lck
+sudo pacman -S github-cli
+gh auth login
+dotfiles remote add origin https://github.com/colbdavis/dotfiles.git
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles remote add origin https://github.com/colbdavis/dotfiles.git
+dotfiles branch -M main
+dotfiles push -u origin main
+# Crea la repo su GitHub, la imposta come remota e fa il push in un colpo solo\
+gh repo create dotfiles --private --source=. --push
+gh repo create dotfiles --private --source=. --push
+zz .dotfiles
+z .dotfiles
+gh repo create dotfiles --private --source=. --push
+dotfiles remote -v
+dotfiles remote remove origin
+gh repo create dotfiles --private --source=. --push
+dotfiles remote remove origin
+dotfiles remote -v
+dotfiles remote remove origin
+gh repo create dotfiles --private --source=. --push
+git push
+git push --set-upstream origin main
+dotfiles status
+git commit -m "First added files"
+git commit -m "Initial commit"
+nvim .config/zsh/zshrc
+z
+nvim .config/zsh/zshrc
+dotfiles status
+z dot
+dotfiles add ~/.config/waybar/\
+dotfiles add ~/.config/hypr/
+dotfiles add .zzshrc
+dotfiles add .zshrc
+dotfiles add .config/zsh/zshrc
+dotfiles add ~/.config/zsh/zshrc
+dotfiles commit -m "Initial commit: Arch Hyprland configuration"
+git config --global user.email "coltranebraxtondavis@tuta.io"
+git config --global user.name "Col B Davis"
+dotfiles commit -m "Initial commit: Arch Hyprland configuration"
+git push --set-upstream origin main
+cd
+nvim notes/markor/it/Chat-Hyprland-Context.md
+cat notes/markor/it/Chat-Hyprland-Context.md
+nvim notes/markor/it/Chat-Hyprland-Context.md
+z it
+nautilus .
+paru
+sudo pacman -S fastfetch
+fastfetch
+sudo pacman -Syu               # Aggiornamento completo\
+sudo pacman -S base-devel git curl wget
+pacman -S docker 
+sudo pacman -S docker 
+sudo gpasswd -a $USER docker
+newgrp docker  
+sudo pacman -S docker-compose
+sudo pacman -S htop ctop glances
+sudo pacman -S ctop glances
+mkdir /etc/docker
+sudo mkdir /etc/docker
+sudo nvim /etc/docker/daemon.json
+docker run -d --name ollama \\
+  --restart unless-stopped \\
+  -p 11434:11434 \\
+  -v $HOME/ollama:/root/.ollama \\
+  ghcr.io/ollama/ollama:latest
+sudo systemctl enable --now docker
+: 1767035100:0;z hypr
+: 1767035106:0;nvim hyprland.conf
+: 1767035161:0;docker run -d --name ollama \\
+  --restart unless-stopped \\
+  -p 11434:11434 \\
+  -v $HOME/ollama:/root/.ollama \\
+  ghcr.io/ollama/ollama:latest
+: 1767035168:0;sudo systemctl enable --now docker
+: 1767035183:0;systemctl status docker.servic
+: 1767035198:0;systemctl status docker
+: 1767035259:0;journalctl -u docker.service -b -n 200
+: 1767035290:0;sudo mv /etc/docker/daemon.json /etc/docker/daemon.json.bak 2>/dev/null || true
+: 1767035308:0;cat <<EOF | sudo tee /etc/docker/daemon.json\
+{\
+  "storage-driver": "overlay2"\
+}\
+EOF
+: 1767035321:0;if [[ $(stat -fc %T /sys/fs/cgroup) != "cgroup2fs" ]]; then\
+  echo "cgroup v2 non attivo  � aggiungo kernel param"\
+  sudo sed -i 's/^GRUB_CMDLINE_LINUX="/GRUB_CMDLINE_LINUX="systemd.unified_cgroup_hierarchy=1 /' /etc/default/grub\
+  sudo grub-mkconfig -o /boot/grub/grub.cfg   # per GRUB\
+  # per systemd �boot:\
+  # sudo bootctl update\
+  echo "Riavvia il PC e ritorna qui"\
+  exit 0\
+fi
+: 1767035352:0;nvim check.sh
+: 1767035366:0;chmod +x check.sh
+: 1767035371:0;./check.sh
+: 1767035380:0;sudo systemctl restart containerd\
+sudo systemctl status containerd
+: 1767035408:0;sudo systemctl enable containerd.service\
+
+: 1767035435:0;sudo systemctl enable --now docker
+: 1767035451:0;sudo systemctl status docker
+: 1767035461:0;docker run -d --name ollama \\
+  --restart unless-stopped \\
+  -p 11434:11434 \\
+  -v $HOME/ollama:/root/.ollama \\
+  ghcr.io/ollama/ollama:latest
+: 1767035502:0;cd
+: 1767035511:0;mkdir serv
+: 1767035515:0;z serc
+: 1767035517:0;z serv
+: 1767035537:0;mkdir ollama && z ollama
+: 1767035552:0;docker run -d --name ollama \\
+  --restart unless-stopped \\
+  -p 11434:11434 \\
+  -v $HOME/ollama:/root/.ollama \\
+  ollama/ollama:latest
+: 1767035750:0;docker ps -f name=ollama
+: 1767035759:0;docker logs -f ollama
+: 1767035804:0;curl http://127.0.0.1:11434/api/version
+: 1767035823:0;docker exec -it ollama ollama pull gemma:2b
+: 1767036016:0;ocker compose up -d openwebui
+: 1767036021:0;docker compose up -d openwebui
+: 1767036101:0;nvim docker-compose.yml
+: 1767036702:0;rm docker-compose.yml
+: 1767036705:0;cd ..
+: 1767036708:0;nvim docker-compose.yml
+: 1767036729:0;docker kill ollama
+: 1767036733:0;docker ps
+: 1767036741:0;cat docker-compose.yml
+: 1767036781:0;mkdir -p $HOME/docker/{openwebui,searxng,opennotebook}
+: 1767036829:0;docker compose up -d --build
+: 1767036962:0;htop
+: 1767037007:0;yazi
+: 1767037022:0;docker compose up -d --build
+: 1767037051:0;mkdir -p /home/tod/docker/opennotebook
+: 1767037109:0;nvim /home/tod/docker/opennotebook/Dockerfile
+: 1767037130:0;sudo pacman -S docker-buildx
+: 1767037149:0;docker buildx version
+: 1767037173:0;z ser
+: 1767037180:0;cd ..
+: 1767037181:0;ls
+: 1767037193:0;yazi
+: 1767037878:0;rm -rf ollama
+: 1767037889:0;sudo rm -rf ollama
+: 1767037918:0;cd docker
+: 1767037923:0;nvim docker-compose.yml
+: 1767037945:0;z docker
+: 1767037950:0;nvim docker-compose.yml
+: 1767037978:0;docker run -d --name ollama \\
+  --restart unless-stopped \\
+  -p 11434:11434 \\
+  -v $HOME/docker/ollama:/root/.ollama \\
+  ollama/ollama:latest
+: 1767037986:0;rm -rf ollama
+: 1767037988:0;docker run -d --name ollama \\
+  --restart unless-stopped \\
+  -p 11434:11434 \\
+  -v $HOME/docker/ollama:/root/.ollama \\
+  ollama/ollama:latest
+: 1767038238:0;docker ps -a | grep ollama
+: 1767038242:0;docker ps 
+: 1767038251:0;docker ps -a\ 
+: 1767038253:0;docker ps -a
+: 1767038271:0;docker rm ollama
+: 1767038274:0;docker ps -a
+: 1767038290:0;docker compose up -d --build
+: 1767038296:0;z docker
+: 1767038299:0;docker compose up -d --build
+: 1767038373:0;ls
+: 1767038385:0;nvim opennotebook/Dockerfile
+: 1767038407:0;docker compose down
+: 1767038429:0;docker compose up -d --build
+: 1767038662:0;nvim docker-compose.yml
+: 1767040368:0;docker compose down
+: 1767040370:0;docker compose up -d --build
+: 1767040415:0;z docker
+: 1767040418:0;cd no
+: 1767040422:0;cd opennotebook
+: 1767040428:0;nvim dokcer.env
+: 1767040443:0;mv dokcer.env docker.env
+: 1767040555:0;docker compose ps\
+
+: 1767040729:0;docker exec -it ollama ollama pull gemma:2b
+: 1767047014:0;docker exec -it ollama ollama list\
+
+: 1767047044:0;docker exec -it openwebui curl http://ollama:11434/api/tags\
+
+: 1767047504:0;docker exec -it ollama ollama pull qwen2.5:1b\
+\
+
+: 1767047519:0;docker exec -it ollama ollama pull qwen2.5\
+\
+
+: 1767047575:0;docker exec -it ollama ollama pull qwen2.5:0.5b\
+\
+
+: 1767047613:0;docker exec -it ollama ollama pull qwen2.5:1b\
+
+: 1767047667:0;docker exec -it ollama ollama pull qwen2.5:1.5b\
+
+: 1767047705:0;ls
+: 1767047711:0;cat docker-compose.yml
+: 1767047941:0;docker exec -it openwebui curl http://searxng:8080\
+
+: 1767048831:0;docker exec -it openwebui curl -s http://searxng:8080/search?q=test&format=json\
+
+: 1767048881:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json"\
+
+: 1767048923:0;z docker/searxng
+: 1767048924:0;ls
+: 1767048929:0;nvim settings.yml
+: 1767048992:0;docker kill searxng
+: 1767048994:0;nvim settings.yml
+: 1767049007:0;sudo nvim settings.yml
+: 1767049048:0;docker restart searxng\
+
+: 1767049075:0;docker ps -a
+: 1767049154:0;docker compose ps\
+
+: 1767049162:0;z dock
+: 1767049173:0;docker compose down\
+
+: 1767049193:0;docker compose up\
+
+: 1767049237:0;docker compose up -d --build
+: 1767049248:0;docker compose ps\
+
+: 1767049414:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json"\
+
+: 1767049450:0;docker compose ps\
+
+: 1767049565:0;z it
+: 1767049582:0;nvim Chat-Server-Context.md
+: 1767049699:0;z dock
+: 1767049706:0;cat searxng/settings.yml
+: 1767049716:0;cat searxng/settings.yml | grep public
+: 1767049754:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json"\
+
+: 1767050022:0;docker logs searxng
+: 1767050204:0;z searxng
+: 1767050220:0;docker logs searxng
+: 1767050228:0;docker compose ps\
+
+: 1767050385:0;cd
+: 1767050397:0;nvim docker-compose.overrride.yml
+: 1767050418:0;docker compose up -d 
+: 1767050436:0;mv docker-compose.overrride.yml ./docker
+: 1767050440:0;z dock
+: 1767050445:0;docker compose up -d 
+: 1767050463:0;docker compose ps
+: 1767050501:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json"\
+
+: 1767050534:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json" > output.json\
+
+: 1767050540:0;nvim output.json
+: 1767050645:0;nvim docker-compose.yml
+: 1767050695:0;mv docker-compose.yml old-compose0024.yml
+: 1767050698:0;nvim docker-compose.ymlù
+: 1767050703:0;nvim docker-compose.yml
+: 1767050826:0;docker compose down
+: 1767050877:0;docker kill opennotebook
+: 1767050894:0;docker ps
+: 1767050931:0;docker kill opennotebook
+: 1767051014:0;fg
+: 1767051032:0;docker kill opennotebook
+: 1767051054:0;docker rm -f opennotebook
+: 1767051089:0;docker inspect -f '{{.State.Pid}}' opennotebook\
+
+: 1767051115:0;docker ps
+: 1767051161:0;sudo systemctl restart docker\
+
+: 1767051192:0;docker ps
+: 1767051204:0;docker kill ollama
+: 1767051212:0;docker ps -a
+: 1767051225:0;cd docker
+: 1767051235:0;docker compose up -d\
+
+: 1767051024:4;docker compose down
+: 1767051269:0;nvim docker-compose.yml
+: 1767051335:0;docker compose ps\
+
+: 1767051350:0;nvim old-compose0024.yml
+: 1767051388:0;nvim docker-compose.yml
+: 1767051481:0;docker compose up -d\
+
+: 1767051488:0;nvim docker-compose.yml
+: 1767051506:0;docker compose up -d\
+
+: 1767051517:0;docker compose ps\
+
+: 1767051687:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json" > output.json\
+
+: 1767051703:0;docker compose ps\
+
+: 1767051753:0;docker compose down
+: 1767051768:0;nvim docker-compose.yml
+: 1767051823:0;docker compose up -d\
+
+: 1767051832:0;docker compose ps\
+
+: 1767051916:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json" > output.json\
+
+: 1767051965:0;nvim output.json
+: 1767051991:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json" \
+
+: 1767052036:0;docker exec -it openwebui bash\
+curl -v "http://searxng:8080/search?q=test&format=json"\
+
+: 1767052412:0;docker compose down\
+
+: 1767052434:0;b\
+poweroff
+: 1767086915:0;paru
+: 1767086944:0;flatpak install ungoogled-chromium
+: 1767087006:0;flatpak install flathub io.github.ungoogled_software.ungoogled_chromium
+: 1767087485:0;nvim noci.md
+: 1767087643:0;cat noci.md
+: 1767087677:0;nvim noci.md
+: 1767089227:0;z dock
+: 1767089234:0;docker compose up -d\
+
+: 1767089287:0;mv noci.md notes/markor/Spargo/noviritornorouteinv.md
+: 1767089342:0;docker ps -a
+: 1767089381:0;docker compose ps\
+
+: 1767089590:0;z it
+: 1767089599:0;nvim Chat-Server-Context.md
+: 1767089639:0;nautilus .
+: 1767089668:0;cat Chat-
+: 1767089672:0;cat Chat-Server-Context.md
+: 1767089709:0;docker compose ps\
+
+: 1767089730:0;docker logs searxng\
+
+: 1767089759:0;nvim searxng/settings.yml
+: 1767089906:0;rm docker-compose.overrride.yml
+: 1767089913:0;nvim docker-compose.yml
+: 1767089965:0;docker compose down\
+
+: 1767089978:0;docker compose up -d\
+
+: 1767089992:0;docker exec -it searxng cat /etc/searxng/settings.yml\
+
+: 1767090035:0;docker compose ps\
+
+: 1767090056:0;docker logs -f searxng\
+
+: 1767090174:0;nvim searxng/settings.yml
+: 1767090223:0;mv searxng/settings.yml searxng/oldsettting.yml.old
+: 1767090235:0;docker compose dwon
+: 1767090239:0;docker compose down
+: 1767090244:0;mv searxng/settings.yml searxng/oldsettting.yml.old
+: 1767090267:0;ls -l searxng/settings.yml\
+
+: 1767090287:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767090320:0;rm searxng/settings.yml
+: 1767090327:0;sudo rm searxng/settings.yml
+: 1767090332:0;nvim searxng/settings.yml
+: 1767090400:0;ls -l searxng/settings.yml\
+
+: 1767090419:0;sudo touch searxng/setting.yml
+: 1767090426:0;sudo nvim searxng/setting.yml
+: 1767090461:0;docker compose up -d\
+
+: 1767090496:0;docker compose ps
+: 1767090587:0;docker compose down
+: 1767090596:0;docker rm -f searxng
+: 1767090608:0;rm -rf searxng/\
+
+: 1767090613:0;sudo rm -rf searxng/\
+
+: 1767090618:0;ls searxng\
+# deve fallire\
+
+: 1767090637:0;docker compose up -d\
+
+: 1767090658:0;docker compose down
+: 1767090682:0;mkdir -p searxng\
+nvim searxng/settings.yml\
+
+: 1767090760:0;sudo nvim searxng/setting.yml
+: 1767090785:0;nvim docker-compose.yml
+: 1767090871:0;docker compose up -d\
+
+: 1767090882:0;nvim docker-compose.yml
+: 1767090940:0;docker compose up -d\
+
+: 1767090948:0;nvim docker-compose.yml
+: 1767091038:0;docker compose config
+: 1767091046:0;nvim docker-compose.yml
+: 1767091065:0;docker compose config
+: 1767091069:0;docker compose up -d\
+
+: 1767091093:0;docker compose ps
+: 1767091138:0;docker logs searxng\
+
+: 1767091219:0;docker compose down
+: 1767091233:0;nvim ~/.config/zsh/zshrc
+: 1767091296:0;docker rm -f searxng
+: 1767091303:0;ls -l searxng\
+
+: 1767091317:0;rm -rf searxng/settings.yml\
+
+: 1767091322:0;sudo rm -rf searxng/settings.yml\
+
+: 1767091329:0;ls -l searxng\
+
+: 1767091339:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767091346:0;ls -l searxng\
+
+: 1767091350:0;rm -rf searxng/settings.yml\
+
+: 1767091353:0;ls -l searxng\
+
+: 1767091362:0;sudo ls -l searxng\
+
+: 1767091376:0;rm -rf searxng/settings.yml\
+
+: 1767091379:0;sudo rm -rf searxng/settings.yml\
+
+: 1767091382:0;ls -l searxng\
+
+: 1767091397:0;z it
+: 1767091400:0;z dock
+: 1767091401:0;ls
+: 1767091425:0;mv old-compose0024.yml ~/oldcompose
+: 1767091426:0;ls
+: 1767091441:0;rm output.json
+: 1767091443:0;ls
+: 1767091445:0;yazi
+: 1767091490:0;su root
+: 1767091514:0;ls
+: 1767091517:0;yazi
+: 1767091533:0;nano searxng/settings.yml\
+
+: 1767091583:0;sudo chown -R $USER:$USER searxng\
+sudo chmod -R u+rwX searxng\
+
+: 1767091594:0;ls -ld searxng\
+
+: 1767091601:0;nano searxng/settings.yml\
+
+: 1767091637:0;ls -l searxng/settings.yml\
+
+: 1767091649:0;docker compose up -d searxng\
+docker logs -f searxng\
+
+: 1767091666:0;nvim docker-compose.yml
+: 1767091690:0;ls -l searxng/settings.yml\
+
+: 1767091694:0;nano searxng/settings.yml\
+
+: 1767091715:0;curl http://localhost:8081/search?q=test&format=json\
+
+: 1767091752:0;docker compose down
+: 1767091806:0;grep -r "docker_ai_net" . | fzf\
+
+: 1767091859:0;nvim ~/.config/hypr/hyprland.conf
+: 1767092006:0;docker compose ps
+: 1767092012:0;z docker
+: 1767092015:0;docker compose ps
+: 1767092021:0;htop
+: 1767092089:0;docker network ls\
+
+: 1767092097:0;docker network rm docker_ai_net\
+
+: 1767092141:0;z do
+: 1767092153:0;doco up
+: 1767092300:0;diff oldcompose docker/docker-compose.yml
+: 1767092442:0;z docker
+: 1767092459:0;doco up -d --build
+: 1767092466:0;doco ps
+: 1767092510:0;docker exec -it openwebui curl -s "http://searxng:8080/search?q=test&format=json" \
+
+: 1767092629:0;docker logs searxng\
+
+: 1767092654:0;cat docker/docker-compose.yml
+: 1767092750:0;z it
+: 1767092753:0;nvim Chat-Server-Context.md
+: 1767093184:0;cat Chat-Server-Context.md
+: 1767093348:0;z do
+: 1767093355:0;cat searxng/settings.yml
+: 1767093405:0;nautilus .
+: 1767093447:0;cp searxng/settings.yml ~/searxng.txt
+: 1767093475:0;nautilus .
+: 1767093581:0;chown -R 991:991 ${HOME}/docker/searxng\
+
+: 1767093586:0;sudo chown -R 991:991 ${HOME}/docker/searxng\
+
+: 1767093593:0;ls -l searxng/settings.yml\
+
+: 1767093614:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767093650:0;docker-compose down && docker-compose up
+: 1767093720:0;doco ps
+: 1767093964:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767094242:0;mv searxng/settings.yml searxng/old2settting.yml.old
+: 1767094253:0;z do
+: 1767094254:0;mv searxng/settings.yml searxng/old2settting.yml.old
+: 1767094259:0;ls
+: 1767094270:0;yazi
+: 1767094284:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767094290:0;mv searxng/settings.yml searxng/old2settting.yml.old
+: 1767094296:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767094306:0;mv searxng/settings.yml ~/old2settting.yml.old
+: 1767094313:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767094316:0;mv searxng/settings.yml ~/old2settting.yml.old
+: 1767094320:0;sudo mv searxng/settings.yml ~/old2settting.yml.old
+: 1767094346:0;sudo nvim searxng/settings.yml
+: 1767094374:0;doco ps
+: 1767094380:0;doco up -d --build
+: 1767094385:0;doco up -d 
+: 1767094392:0;docker logs searxng\
+
+: 1767094442:0;doco down
+: 1767094451:0;sudo chown $USER:$USER searxng/settings.yml\
+sudo chmod 644 searxng/settings.yml\
+
+: 1767094534:0;openssl rand -hex 32\
+
+: 1767094817:0;doco up -d
+: 1767094844:0;docker logs openwebui
+: 1767094917:0;docker exec -it openwebui curl -v http://ollama:11434\
+
+: 1767094948:0;docker exec -it openwebui curl -v http://searxng:8081\
+
+: 1767094961:0;doco ps
+: 1767094992:0;docker logs earxc
+: 1767094998:0;docker logs searxng
+: 1767095211:0;rm -f ${HOME}/docker/searxng/settings.yml\
+
+: 1767095214:0;sudo rm -f ${HOME}/docker/searxng/settings.yml\
+
+: 1767095223:0;mkdir -p ${HOME}/docker/searxng\
+sudo chown -R 991:991 ${HOME}/docker/searxng\
+
+: 1767095248:0;nvim searxng/settings.yml
+: 1767095281:0;ls -l searxng/settings.yml\
+
+: 1767095287:0;su systemd-network
+: 1767095303:0;sudo su systemd-network
+: 1767095334:0;sudo rm searxng
+: 1767095342:0;sudo rm -rf searxng
+: 1767095344:0;ls
+: 1767095348:0;mkdir -p ${HOME}/docker/searxng\
+sudo chown -R 991:991 ${HOME}/docker/searxng\
+
+: 1767095356:0;nvim searxng/settings.yml
+: 1767095367:0;sudo nvim searxng/settings.yml
+: 1767095387:0;chown -R 991:991 ${HOME}/docker/searxng\
+chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767095391:0;sudo chown -R 991:991 ${HOME}/docker/searxng\
+chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767095407:0;sudo chmod 664 searxng/settings.yml
+: 1767095513:0;doco up -d
+: 1767095540:0;doco ps
+: 1767095559:0;docker logs searxng
+: 1767095625:0;docker exec -it openwebui curl -v http://searxng:8081\
+
+: 1767095929:0;nmtui
+: 1767095966:0;doco ps
+: 1767096070:0;docker network inspect docker_ai_net\
+
+: 1767096094:0;docker ps\
+
+: 1767096138:0;docker logs searxng
+: 1767096211:0;docker exec -it searxng ls /etc\
+
+: 1767096229:0;docker ps\
+
+: 1767096816:0;docker ps -a --filter "name=searxng"\
+
+: 1767096824:0;docker logs searxng --tail 50\
+
+: 1767096867:0;docker-compose stop searxng\
+
+: 1767096876:0;cp ${HOME}/docker/searxng/settings.yml ${HOME}/docker/searxng/settings.yml.backup\
+
+: 1767096897:0;sudo cp ${HOME}/docker/searxng/settings.yml ${HOME}/docker/searxng/settings.yml.backup\
+
+: 1767096910:0;sudo chown ${USER}:${USER} ${HOME}/docker/searxng/settings.yml.backup\
+
+: 1767096918:0;sudo rm -f ${HOME}/docker/searxng/settings.yml\
+
+: 1767096925:0;nano ${HOME}/docker/searxng/settings.yml\
+
+: 1767096957:0;sudo nano ${HOME}/docker/searxng/settings.yml\
+
+: 1767096975:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767096984:0;docker-compose up -d searxng\
+
+: 1767096995:0;doco ps
+: 1767097023:0;docker logs searxng --tail 50\
+
+: 1767097099:0;doco down searxng
+: 1767097196:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767097204:0;docker-compose up -d searxng\
+
+: 1767097214:0;doco ps
+: 1767097222:0;docker logs searxng --tail 50\
+
+: 1767097232:0;doco down searxng
+: 1767097242:0;sudo nano ${HOME}/docker/searxng/settings.yml\
+
+: 1767097256:0;sudo nvim searxng/settings.yml
+: 1767097280:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767097291:0;doco up -d searxng
+: 1767097296:0;doco ps
+: 1767097308:0;docker logs searxng --tail 50\
+
+: 1767097394:0;sudo nvim searxng/settings.yml
+: 1767097409:0;doco down searxng
+: 1767097425:0;z do
+: 1767097428:0;cat searxng/settings.yml
+: 1767097472:0;docker logs searxng\
+
+: 1767097479:0;doco up -d searxng
+: 1767097482:0;docker logs searxng\
+
+: 1767097508:0;docker-compose stop searxng\
+
+: 1767097518:0;sudo rm -f ${HOME}/docker/searxng/settings.yml\
+
+: 1767097542:0;docker-compose up -d searxng\
+
+: 1767097573:0;doco ps
+: 1767097578:0;docker logs searxng\
+
+: 1767099995:0;sudo nvim searxng/settings.yml
+: 1767100502:0;doco up -d searxng
+: 1767100506:0;doco ps
+: 1767100521:0;docker logs searxng\
+
+: 1767102389:0;z do
+: 1767102392:0;doco ps
+: 1767102421:0;docker exec -it openwebui curl -v http://searxng:8081\
+
+: 1767102633:0;docker ps -a --filter "name=searxng"\
+
+: 1767102652:0;docker exec -it searxng netstat -tuln\
+
+: 1767102682:0;docker exec -it openwebui curl -v http://searxng:8080\
+
+: 1767103122:0;docker logs openwebui\
+
+: 1767103334:0;docker exec -it openwebui curl -v http://searxng:8080\
+
+: 1767103338:0;docker logs openwebui\
+
+: 1767103420:0;docker exec -it openwebui curl -v http://searxng:8081\
+
+: 1767103484:0;curl http://localhost:8081/
+: 1767103545:0;docker exec -it openwebui curl -v http://searxng:8080/search?q=scuderia+carlone&format=json&pageno=1&safesearch=1&language=all&time_range=&categories=&theme=simple&image_proxy=0\
+
+: 1767103562:0;docker exec -it openwebui curl -v 'http://searxng:8080/search?q=scuderia+carlone&format=json&pageno=1&safesearch=1&language=all&time_range=&categories=&theme=simple&image_proxy=0'\
+
+: 1767103601:0;doco down searxng
+: 1767103605:0;z do
+: 1767103606:0;doco down searxng
+: 1767103670:0;doco up -d searxng
+: 1767103683:0;docker logs searxng\
+
+: 1767103724:0;doco down searxng
+: 1767103731:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767103739:0;ls searxng
+: 1767103745:0;nvim searxng/settings.yml
+: 1767103796:0;sudo nvim searxng/settings.yml
+: 1767103817:0;doco up -d searxng
+: 1767103820:0;docker logs searxng\
+
+: 1767103834:0;z do
+: 1767103838:0;nvim searxng/settings.yml
+: 1767103886:0;sudo nvim searxng/settings.yml
+: 1767103930:0;doco up -d searxng
+: 1767103939:0;doco down searxng
+: 1767103945:0;doco up -d searxng
+: 1767103950:0;docker logs searxng\
+
+: 1767103964:0;doco ps
+: 1767104084:0;docker logs openwebui\
+
+: 1767104159:0;doco down searxng
+: 1767104164:0;sudo nvim searxng/settings.yml
+: 1767104333:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767104338:0;doco up -d searxng
+: 1767104346:0;docker logs searxng\
+
+: 1767104368:0;sudo nvim searxng/settings.yml
+: 1767104439:0;doco down searxng
+: 1767104443:0;doco up -d searxng
+: 1767104492:0;docker logs searxng\
+
+: 1767104518:0;doco down searxng
+: 1767104521:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767104525:0;sudo nvim searxng/settings.yml
+: 1767104584:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767104589:0;doco up -d searxng
+: 1767104592:0;docker 
+: 1767104598:0;docker logs searxng\
+
+: 1767104631:0;doco down searxng
+: 1767104729:0;docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' openwebui\
+
+: 1767104737:0;sudo nvim searxng/settings.yml
+: 1767104764:0;fg
+: 1767104777:0;sudo nvim searxng/settings.yml
+: 1767104829:0;docker network inspect ai_net\
+
+: 1767104842:0;docker network inspect docker_ai_net\
+
+: 1767104859:0;sudo nvim searxng/settings.yml
+: 1767104973:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767105031:0;doco up -d searxng
+: 1767105038:0;docker logs searxng\
+
+: 1767105049:0;doco ps
+: 1767105056:0;doco down searxng
+: 1767105152:0;sudo rm -f ${HOME}/docker/searxng/settings.yml\
+
+: 1767105160:0;doco up -d searxng
+: 1767105220:0;docker logs searxng\
+
+: 1767105232:0;doco down searxng
+: 1767105237:0;sudo nvim searxng/settings.yml
+: 1767105339:0;docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' openwebui\
+
+: 1767105436:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767105443:0;doco up -d searxng
+: 1767105455:0;docker logs searxng\
+
+: 1767105476:0;docker logs openwebui\
+
+: 1767105504:0;docker exec -it openwebui curl -v 'http://searxng:8080/search?q=scuderia+carlone&format=json&pageno=1&safesearch=1&language=all&time_range=&categories=&theme=simple&image_proxy=0'\
+
+: 1767105586:0;curl -v -H "User-Agent: OpenWebUI-Test" http://searxng:8081/search?q=test&format=json\
+
+: 1767105596:0;curl -v -H "User-Agent: OpenWebUI-Test" http://searxng:80810/search?q=test&format=json\
+
+: 1767105619:0;curl -v -H "User-Agent: OpenWebUI-Test" 'http://searxng:80810/search?q=test&format=jso'n\
+
+: 1767105627:0;curl -v -H "User-Agent: OpenWebUI-Test" 'http://searxng:80810/search?q=test&format=json'\
+
+: 1767105653:0;curl -v -H "User-Agent: OpenWebUI-Test" 'http://searxng:8080/search?q=test&format=jso'n\
+
+: 1767105717:0;docker exec -it searxng /bin/sh\
+
+: 1767105843:0;doco down searxng
+: 1767105847:0;doco up -d searxng
+: 1767105855:0;docker logs openwebui\
+
+: 1767105861:0;docker logs searxng
+: 1767105884:0;docker exec -it openwebui curl -v 'http://searxng:8080/search?q=scuderia+carlone&format=json&pageno=1&safesearch=1&language=all&time_range=&categories=&theme=simple&image_proxy=0'\
+
+: 1767105933:0;docker exec -it openwebui curl -v http://searxng:8080/search?q=test&format=json\
+
+: 1767105960:0;docker exec -it openwebui curl -v 'http://searxng:8080/search?q=test&format=json'
+: 1767105975:0;nvim searxng/settings.yml
+: 1767106051:0;sudo nvim searxng/settings.yml
+: 1767106126:0;doco up -d searxng
+: 1767106137:0;docker exec -it openwebui curl -v 'http://searxng:8080/search?q=test&format=json'
+: 1767106190:0;doco down searxng
+: 1767106200:0;sudo nvim searxng/settings.yml
+: 1767106343:0;sudo chown 991:991 ${HOME}/docker/searxng/settings.yml\
+sudo chmod 644 ${HOME}/docker/searxng/settings.yml\
+
+: 1767106350:0;doco up -d searxng
+: 1767106354:0;docker logs searxng
+: 1767106360:0;docker exec -it openwebui curl -v 'http://searxng:8080/search?q=test&format=json'
+: 1767106742:0;htop
+: 1767107236:0;docker exec -it ollama ollama pull qwen3:0.6b\
+
+: 1767107312:0;docker exec -it ollama ollama pull deepseek-r1:1.5b
+: 1767107537:0;docker exec -it ollama ollama pull deepcoder:1.5b
+: 1767107841:0;docker exec -it ollama ollama pull tinyllama:1.1b
+: 1767107915:0;docker exec -it ollama ollama pull yi-coder:1.5b
+: 1767108037:0;z d
+: 1767108041:0;doco down
+: 1767108051:0;doco up
+: 1767108079:0;doco up ollama
+: 1767108091:0;doco up -d
+: 1767112551:0;z d
+: 1767112555:0;doco ps
+: 1767113135:0;z way
+: 1767113173:0;notify-send -u low -t 2000 "AI Servers" "Server avviati"\
+
+: 1767113192:0;notify-send "AI Servers" "Server avviati" -i network-server
+: 1767113433:0;z d
+: 1767113438:0;doco stop
+: 1767113594:0;docker ps --filter "network=docker_ai_net"
+: 1767113601:0;z d
+: 1767113607:0;doco start
+: 1767113610:0;z d
+: 1767113612:0;docker ps --filter "network=docker_ai_net"
+: 1767113619:0;doco stop
+: 1767113623:0;z d
+: 1767113626:0;doco stop
+: 1767113671:0;doco ps
+: 1767113675:0;z d
+: 1767113677:0;doco ps
+: 1767113714:0;yazi
+: 1767113837:0;chmod +x ~/.config/waybar/scripts/ai-servers-status.sh\
+
+: 1767113864:0;chmod +x ~/.config/waybar/scripts/ai-servers-toggle.sh\
+
+: 1767113878:0;z d
+: 1767113881:0;doco ps
+: 1767113929:0;waybar
+: 1767113957:0;~/.config/waybar/scripts/ai-servers-status.sh\
+
+: 1767113967:0;which notify-send\
+
+: 1767114015:0;~/.config/waybar/scripts/ai-servers-toggle.sh \
+
+: 1767114232:0;z dot
+: 1767114236:0;git status
+: 1767114257:0;git add \\
+  .config/waybar/config.jsonc \\
+  .config/waybar/style.css \\
+  .config/waybar/scripts/ai-servers-status.sh \\
+  .config/waybar/scripts/ai-servers-toggle.sh\
+
+: 1767114276:0;ls -ah
+: 1767114294:0;cd
+: 1767114299:0;git status
+: 1767114307:0;z config
+: 1767114310:0;git status
+: 1767114328:0;z do
+: 1767114332:0;z dot
+: 1767115993:0;paru
+: 1767116015:0;flatpak upgrade
+: 1767116024:0;flatpak update 
+: 1767116048:0;paru lxappearance
+: 1767116170:0;mkdir .themes
+: 1767116340:0;cat .config/zsh/history | grep got
+: 1767116343:0;cat .config/zsh/history | grep git
+: 1767116384:0;cat .config/zsh/history | grep dotfiles
+: 1767116438:0;dotfiles add .config/waybar/
+: 1767116484:0;dotfiles add .config/waybar/\ 
+: 1767116517:0;git commit -m "waybar modules"
+: 1767116522:0;z dor
+: 1767116525:0;z dot
+: 1767116535:0;git commit -m "waybar modules"
+: 1767116628:0;dotfiles commit -m "Waybar modules"
+: 1767116645:0;git push --set-upstream origin main
+: 1767116853:0;cd
+: 1767116881:0;z Downloads
+: 1767116882:0;ls
+: 1767116973:0;gsettings set org.gnome.desktop.interface gtk-theme "Dracula" gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
+: 1767117041:0;z Dracula
+: 1767117086:0;z ..
+: 1767117106:0;cp -rf Dracula ~/.themes/Dracula
+: 1767117982:0;nmtui
+: 1767118056:0;git clone https://github.com/odziom91/libadwaita-theme-changer.git
+: 1767118061:0;chmod +x libadwaita-tc.py
+: 1767118067:0;z libadwaita-theme-changer
+: 1767118074:0;chmod +x libadwaita-tc.py
+: 1767118078:0;./libadwaita-tc.py
+: 1767118388:0;z dl
+: 1767118392:0;z down
+: 1767118410:0;git clone  https://github.com/dracula/wofi.git 
+: 1767118441:0;yazi
+: 1767118612:0;flatpak override --user --env=GTK_THEME=Dracula\
+
+: 1767118622:0;flatpak override --user --env=QT_STYLE_OVERRIDE=gtk2\
+
+: 1767118672:0;git clone https://github.com/dracula/kitty
+: 1767118676:0;cd kitty
+: 1767118704:0;cp dracula.conf diff.conf ~/.config/kitty/ echo "include dracula.conf" >> ~/.config/kitty/kitty.conf 
+: 1767118730:0;mkdir ~/.config/kitty
+: 1767118805:0;cp dracula.conf ~/.config/kitty/
+: 1767118818:0;cp diff.conf ~/.config/kitty/
+: 1767118829:0;echo "include dracula.conf" >> ~/.config/kitty/kitty.conf 
+: 1767119289:0;wofi --style ~/.config/wofi/style.css --show drun\
+
+: 1767119810:0;fc-list | grep "JetBrainsMono Nerd Font Mono"\
+
+: 1767119820:0;wofi --show drun\
+
+: 1767121190:0;flatpak install qbittorrent
+: 1767121510:0;cp Downloads/dracula.qbtheme .themes/dracula.qbtheme
+: 1767121644:0;flatpak override --user --filesystem=~/.local/share/fonts:ro org.librewolf.LibreWolf\
+
+: 1767121966:0;ls mkdir -p ~/.var/app/org.librewolf.LibreWolf/.librewolf
+: 1767121982:0;ls mkdir -p ~/.var/app/io.gitlab.librewolf-community/.librewolf
+: 1767122027:0;mkdir -p ~/.var/app/io.gitlab.librewolf-community/.librewolf/qpbiprte.Music/chrome
+: 1767122039:0;nvim ~/.var/app/org.librewolf.LibreWolf/.librewolf/xxxx.default/chrome/userContent.css\
+
+: 1767122113:0;touch ~/.var/app/org.librewolf.LibreWolf/.librewolf/xxxx.default/chrome/userContent.css\
+
+: 1767122126:0;nvim ~/.var/app/io.gitlab.librewolf-community/.librewolf/qpbiprte.Music/chrome
+: 1767122186:0;nvim ~/.var/app/io.gitlab.librewolf-community/.librewolf/qpbiprte.Music/chrome/userChrome.css
+: 1767122268:0;paru
+: 1767122284:0;nmtui
+: 1767122296:0;paru
+: 1767122439:0;cat .config/waybar/style.css
+: 1767122532:0;z .themes
+: 1767122553:0;nvim lwnewpage.hmtl
+: 1767123142:0;flatpak list --runtime\
+
+: 1767123154:0;flatpak list \
+
+: 1767124133:0;nmtui
+: 1767124359:0;paru sddm-silent-theme
+: 1767124429:0;sudoedit /etc/sddm.conf
+: 1767124446:0;sudo nvim /etc/sddm.conf
+: 1767124511:0;cd /usr/share/sddm/themes/silent/\
+./test.sh
+: 1767124978:0;z dot
+: 1767125017:0;dotfiles add ~/.config/kitty
+: 1767125025:0;dotfiles add ~/.config/wofi
+: 1767125066:0;dotfiles commit -m "Dracula colorscheme in wofi and kitty"
+: 1767125071:0;git push --set-upstream origin main
+: 1767125288:0;nvim update.sh
+: 1767125412:0;mv update.sh ~/.local/bin
+: 1767125424:0;z .local/bin
+: 1767125429:0;z ~/.local/bin
+: 1767125431:0;lws
+: 1767125432:0;ls
+: 1767125440:0;chmod +x update.sh
+: 1767125446:0;./update.sh
+: 1767125466:0;poweroff
+: 1767175438:0;ls .local/share/wallpapers
+: 1767175450:0;hyprctl hyprpaper reload , "~/.local/share/wallpapers/wal.png"
+: 1767175477:0;paru
+: 1767175494:0;sudo pacman -S hyprpaper
+: 1767175514:0;hyprctl h\yprpaper reload , "~/.local/share/wallpapers/wal.png"
+: 1767175529:0;hyprctl hyprpaper load , "~/.local/share/wallpapers/wal.png"
+: 1767175573:0;nvim .config/hypr/hyprpaper.ini
+: 1767175584:0;nvim .config/hypr/hyprpaper.conf
+: 1767175727:0;hyprctl monitors\
+
+: 1767175843:0;ls .local/share/wallpapers
+: 1767175894:0;hyprpaper
+: 1767175902:0;ls .local/share/wallpapers
+: 1767175907:0;nvim .config/hypr/hyprpaper.conf
+: 1767175932:0;hyprpaper
+: 1767175962:0;hyprpaper > paperlogs.txt
+: 1767175972:0;nvim paperlogs.txt
+: 1767176088:0;nvim .config/hypr/hyprpaper.conf
+: 1767176125:0;hyprpaper
+: 1767176163:0;hyprctl hyprpaper preload "/home/tod/.local/share/wallpapers/wal.png"
+: 1767176170:0;hyprpaper preload "/home/tod/.local/share/wallpapers/wal.png"
+: 1767176185:0;hyprpaper load "/home/tod/.local/share/wallpapers/wal.png"
+: 1767176199:0;hyprpaper wallpaper "/home/tod/.local/share/wallpapers/wal.png"
+: 1767176218:0;hyprpaper wallpaper ,"/home/tod/.local/share/wallpapers/wal.png"
+: 1767176254:0;nmtui
+: 1767176292:0;paru hyprwall
+: 1767176438:0;wall
+: 1767176444:0;man wall
+: 1767176481:0;paru hyprwall
+: 1767176504:0;paru -R hyprwallhaven-bin 
+: 1767176584:0;paru -S waypaper
+: 1767176691:0;paru -R waypaper
+: 1767176754:0;hyprctl hyprpaper listloaded\
+
+: 1767176792:0;nvim .config/hypr/hyprpaper.conf
+: 1767176838:0;mv .local/share/wallpapers ~/Pictures/wallpapers
+: 1767176842:0;ls .local/share/wallpapers
+: 1767176851:0;ls Pictures/Wallpapers
+: 1767176884:0;mv Pictures/Wallpapers/* Pictures/wallpapers/
+: 1767176896:0;ls Pictures/w
+: 1767176898:0;ls Pictures/wallpapers
+: 1767176907:0;rm -rf Pictures/Wallpapers
+: 1767177403:0;ls .local/share/wallpapers
+: 1767177407:0;ls Pictures/wallpapers
+: 1767177438:0;mv Pictures/wallpapers/wal.png Pictures/wallpapers/wall.png
+: 1767177456:0;sudo pacman -S imagemagick
+: 1767177485:0;convert Pictures/wallpapers/wall.png Pictures/wallpapers/wall.jpg
+: 1767177497:0;magick Pictures/wallpapers/wall.png Pictures/wallpapers/wall.jpg
+: 1767177505:0;ls
+: 1767177510:0;ls Pictures/wallpapers
+: 1767177521:0;rm Pictures/wallpapers/wall.png
+: 1767177625:0;ps aux | grep -E "swww|feh"\
+
+: 1767177643:0;ps aux | grep -E "swww"\
+
+: 1767177653:0;nvim .config/hypr/hyprpaper.conf
+: 1767177701:0;nvim .config/hypr/hyprl
+: 1767177706:0;nvim .config/hypr/hyprland.conf
+: 1767177769:0;hyprctl hyprpaper listloaded\
+
+: 1767177788:0;ps aux | grep -E "hyprpaper"
+: 1767177839:0;hyprctl hyprpaper help\
+
+: 1767177875:0;hyprctl version\
+
+: 1767177885:0;hyprctl help | grep hyprpaper\
+
+: 1767177969:0;ps aux | grep hyprpaper\
+
+: 1767178018:0;ls ~/.config/hypr/hyprpaper.conf\
+
+: 1767178035:0;ls /home/tod/Pictures/wall.jpg\
+
+: 1767178053:0;nvim .config/hypr/hyprpaper.conf
+: 1767178073:0;ls /home/tod/Pictures/wallpapers/wall.jpg\
+
+: 1767178104:0;pkill hyprpaper
+: 1767178107:0;hyprpaper
+: 1767178142:0;nvim .config/hypr/hyprpaper.conf
+: 1767178195:0;hyprpaper
+: 1767178300:0;hyprpaper -c ~/.config/hypr/hyprpaper.conf\
+
+: 1767178336:0;strace -e openat hyprpaper 2>&1 | grep hyprpaper.conf\
+
+: 1767178349:0;paru strace
+: 1767178363:0;strace -e openat hyprpaper 2>&1 | grep hyprpaper.conf\
+
+: 1767178428:0;nvim .config/hypr/hyprland.conf
+: 1767178602:0;sudo pacman -S wbg\
+
+: 1767178612:0;paru wbg
+: 1767178664:0;wbg /home/tod/Pictures/wallpapers/wall.jpg\
+
+: 1767178686:0;nvim .config/hypr/hyprland.conf
+: 1767178736:0;sudo pacman -R hyprpaper
+: 1767178761:0;rm .config/hypr/hyprpaper.conf .config/hypr/hyprpaper.ini
+: 1767178808:0;cat .config/zsh/history | grep dotfiles
+: 1767178873:0;dotfiles commit -m "Wallpaper config with wbg, hyprpaper didn't work"
+: 1767178905:0;dotfiles add ~/.config/hypr
+: 1767178908:0;dotfiles commit -m "Wallpaper config with wbg, hyprpaper didn't work"
+: 1767178964:0;dotfiles push -u origin main
+: 1767179191:0;dotfiles add ~/.config/hypr
+: 1767179258:0;\
+dotfiles commit -m "Removed unnecessary files"
+: 1767179264:0;dotfiles push -u origin main
+: 1767179558:0;paru
+: 1767179580:0;paru tree
+: 1767179592:0;sudo pacman -S tree
+: 1767179603:0;z docl
+: 1767179604:0;z doc
+: 1767179615:0;tree
+: 1767179646:0;tree > tree
+: 1767179650:0;nvim tree
+: 1767179693:0;rm tree
+: 1767179716:0;cd ~/Documents/prog
+: 1767179780:0;mkdir local-ai-net-docker
+: 1767179784:0;z local-ai-net-docker
+: 1767179805:0;cp ~/docker/docker-compose.yml
+: 1767179811:0;cp ~/docker/docker-compose.yml ./
+: 1767179813:0;ls
+: 1767179851:0;mkdir searxng 
+: 1767179866:0;cp ~/docker/searxng/settings.yml ./searxng
+: 1767179868:0;ls
+: 1767179872:0;tree
+: 1767179882:0;nvim searxng/settings.yml
+: 1767180009:0;nvim docker-compose.yml
+: 1767180061:0;git init
+: 1767180075:0;git checkout main
+: 1767180081:0;git checkout master
+: 1767180129:0;git add docker-compose.yml
+: 1767180136:0;git add searxng/settings.yml
+: 1767180161:0;git commit -m "First added files"
+: 1767180170:0;git checkout -b baseline
+: 1767180192:0;cat .config/zsh/history | grep gh
+: 1767180208:0;cat ~/.config/zsh/history | grep gh
+: 1767180275:0;z ..
+: 1767180288:0;mv local-ai-net-docker local-ai-docker-net
+: 1767180292:0;z local-ai-docker-net
+: 1767180300:0;gh repo create local-ai-docker-net --private --source=. --push
+: 1767180411:0;gh repo view --json visibility
+: 1767180442:0;gh repo edit --visibility public
+: 1767181282:0;yazi
+: 1767181335:0;rm Pictures/wallpapers/wall.jpg
+: 1767181357:0;cp Pictures/wallpapers/Dracula/Ship.png Pictures/wallpapers/wall.png
+: 1767181364:0;magick Pictures/wallpapers/wall.png Pictures/wallpapers/wall.jpg
+: 1767182039:0;nvim .config/waybar/config.jsonc
+: 1767184489:0;z it
+: 1767184492:0;yazi
+: 1767184540:0;man yazi
+: 1767184546:0;yazi --help
+: 1767184665:0;yazi
+: 1767184878:0;nvim todo.md
+: 1767185121:0;mv todo.md README.md
+: 1767185156:0;nvim .config/zsh/zshrc
+: 1767185233:0;dotf add README.md
+: 1767185254:0;dotf add .config/zsh
