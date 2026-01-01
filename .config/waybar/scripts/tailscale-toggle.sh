@@ -1,31 +1,38 @@
 #!/bin/sh
 
 notify() {
-    notify-send -a "Syncthing" "$1" "$2"
+    notify-send -a "Tailscale" "$1" "$2"
 }
 
-if pgrep -f "syncthing --no-browser" > /dev/null; then
-    # Syncthing è attivo
-    CHOICE=$(printf "Aprire Browser\nDisattivare Syncthing" | wofi --dmenu --prompt "Syncthing attivo")
+if ! systemctl is-active --quiet tailscaled.service; then
+    notify "Errore" "Il servizio tailscaled non è attivo"
+    exit 1
+fi
+
+STATUS=$(tailscale status --json 2>/dev/null | jq -r '.BackendState')
+
+if [ "$STATUS" = "Running" ]; then
+    CHOICE=$(printf "Sì\nNo" | wofi --dmenu --prompt "Disconnettere Tailscale?")
     
-    if [ "$CHOICE" = "Aprire Browser" ]; then
-        io.gitlab.librewolf-community http://127.0.0.1:8384/ -p PAOLO &
-        pkill -RTMIN+8 waybar
-    elif [ "$CHOICE" = "Disattivare Syncthing" ]; then
-        pkill -f "syncthing --no-browser"
-        notify "Disattivato" "Disattivato processo syncthing"
-        pkill -RTMIN+8 waybar
+    if [ "$CHOICE" = "Sì" ]; then
+        sudo tailscale down
+        if [ $? -eq 0 ]; then
+            notify "Tailscale" "Disconnesso"
+            pkill -RTMIN+8 waybar
+        else
+            notify "Errore" "Impossibile disconnettere"
+        fi
     fi
 else
-    # Syncthing non è attivo
-    CHOICE=$(printf "Aprire Browser\nAttivare Syncthing" | wofi --dmenu --prompt "Syncthing inattivo")
+    CHOICE=$(printf "Sì\nNo" | wofi --dmenu --prompt "Connettere Tailscale?")
     
-    if [ "$CHOICE" = "Aprire Browser" ]; then
-        io.gitlab.librewolf-community http://127.0.0.1:8384/ -p PAOLO &
-        pkill -RTMIN+8 waybar
-    elif [ "$CHOICE" = "Attivare Syncthing" ]; then
-        syncthing --no-browser &
-        notify "Attivato" "Attivato processo syncthing"
-        pkill -RTMIN+8 waybar
+    if [ "$CHOICE" = "Sì" ]; then
+        sudo tailscale up
+        if [ $? -eq 0 ]; then
+            notify "Tailscale" "Connesso"
+            pkill -RTMIN+8 waybar
+        else
+            notify "Errore" "Impossibile connettersi"
+        fi
     fi
 fi

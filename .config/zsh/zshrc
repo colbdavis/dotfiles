@@ -216,9 +216,10 @@ alias cd='z'
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias doco='docker compose'
+alias docklama='docker exec -it ollama ollama '
 alias grhist='cat ~/.config/zsh/history | grep'
 alias fuzzhist='cat ~/.config/zsh/history | fzf'
 
 export PATH="$HOME/.local/bin:$PATH"
 
-cat ~/README.md
+cat ~/todo.md
