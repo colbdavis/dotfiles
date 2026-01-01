@@ -67,6 +67,18 @@ window#waybar {
     color: #f9e2af; /* giallo */
 }
 
+#custom-syncthing {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#custom-syncthing.active {
+    color: #a6e3a1; /* verde */
+}
+
+#custom-syncthing.inactive {
+    color: #f38ba8; /* rosso */
+}
 #custom-ai-servers {
     padding: 0 10px;
     margin: 0 2px;
@@ -80,6 +92,21 @@ window#waybar {
 /* Stato OFF */
 #custom-ai-servers.stopped {
     color: #f38ba8; /* stesso rosso di tailscale disconnected */
+}
+
+#custom-vms {
+    padding: 0 10px; 
+    margin: 0 2px; 
+}
+
+/* Stato attivo: Verde */
+#custom-vms.running {
+    color: #a6e3a1; 
+}
+
+/* Stato non attivo: Rosso Roseo */
+#custom-vms.stopped {
+    color: #f38ba8; 
 }
 
 

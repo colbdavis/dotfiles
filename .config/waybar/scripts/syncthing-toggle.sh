@@ -10,11 +10,10 @@ if pgrep -f "syncthing --no-browser" > /dev/null; then
     
     if [ "$CHOICE" = "Aprire Browser" ]; then
         io.gitlab.librewolf-community http://127.0.0.1:8384/ -p PAOLO &
-        pkill -RTMIN+8 waybar
     elif [ "$CHOICE" = "Disattivare Syncthing" ]; then
         pkill -f "syncthing --no-browser"
         notify "Disattivato" "Disattivato processo syncthing"
-        pkill -RTMIN+8 waybar
+        sleep 0.5
     fi
 else
     # Syncthing non è attivo
@@ -22,10 +21,12 @@ else
     
     if [ "$CHOICE" = "Aprire Browser" ]; then
         io.gitlab.librewolf-community http://127.0.0.1:8384/ -p PAOLO &
-        pkill -RTMIN+8 waybar
     elif [ "$CHOICE" = "Attivare Syncthing" ]; then
-        syncthing --no-browser &
-        notify "Attivato" "Attivato processo syncthing"
-        pkill -RTMIN+8 waybar
+        nohup syncthing --no-browser > /dev/null 2>&1 &
+        notify "Attivazione" "Avvio processo syncthing..."
+        sleep 1
     fi
 fi
+
+# Aggiorna waybar
+pkill -RTMIN+8 waybar

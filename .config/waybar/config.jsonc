@@ -3,7 +3,7 @@
     "height": 24,
     "spacing": 4,
 
-    "modules-left": ["hyprland/workspaces", "custom/tailscale", "custom/ai-servers"],
+    "modules-left": ["hyprland/workspaces", "custom/tailscale", "custom/syncthing", "custom/ai-servers", "custom/vms"],
     "modules-center": ["clock"],
     "modules-right": ["custom/keymap", "tray", "pulseaudio","memory","battery","network"],
 
@@ -15,7 +15,17 @@
         "interval": 5,
         "on-click": "~/.config/waybar/scripts/tailscale-toggle.sh",
         "signal": 8,
-        "format": "Tailnet {}"
+        "format": "{} Tailnet "
+    },
+
+    "custom/syncthing" : {
+        "exec": "~/.config/waybar/scripts/syncthing-status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "~/.config/waybar/scripts/syncthing-toggle.sh",
+        "signal": 8,
+        "format": "{} Syncthing "
+ 
     },
 
     "custom/ai-servers": {
@@ -25,6 +35,14 @@
         "on-click": "~/.config/waybar/scripts/ai-servers-toggle.sh",
         "signal": 8,
         "format": "{}"
+    },
+
+    "custom/vms": {
+        "exec": "~/.config/waybar/scripts/vms-status.sh",
+        "return-type": "json",
+        "interval": 4,
+        "on-click": "virt-manager",
+        "format": " VM: {text}"
     },
 
 
