@@ -4,14 +4,14 @@ notify() {
     notify-send -a "Syncthing" "$1" "$2"
 }
 
-if pgrep -f "syncthing --no-browser" > /dev/null; then
+if pgrep -x syncthing > /dev/null 2>&1; then
     # Syncthing è attivo
     CHOICE=$(printf "Aprire Browser\nDisattivare Syncthing" | wofi --dmenu --prompt "Syncthing attivo")
     
     if [ "$CHOICE" = "Aprire Browser" ]; then
         io.gitlab.librewolf-community http://127.0.0.1:8384/ -p PAOLO &
     elif [ "$CHOICE" = "Disattivare Syncthing" ]; then
-        pkill -f "syncthing --no-browser"
+        pkill -x syncthing
         notify "Disattivato" "Disattivato processo syncthing"
         sleep 0.5
     fi
