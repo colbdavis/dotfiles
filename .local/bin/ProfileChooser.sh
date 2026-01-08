@@ -12,6 +12,7 @@ Foss)
 	io.gitlab.librewolf-community -P Foss;;
 Git)
 	io.gitlab.librewolf-community -P Git;;
-*)
+Other)
 	io.gitlab.librewolf-community --ProfileManager;;
+*)
 esac
