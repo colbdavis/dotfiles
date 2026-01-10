@@ -3,3 +3,8 @@
 - Made with love and with the help of LLMs and local SmallLMs (see [this other repo](https://github.com/colbdavis/local-ai-docker-net) for that).
 - Catered towards my workflow: Security learning, automation and Linux exploration.
 - Elimination of language ambiguities in progress.
+
+## Mirrors
+
+- [Github](https://github.com/colbdavis/dotfiles)
+- [Codeberg](https://codeberg.org/colbdavis/dotfiles)
