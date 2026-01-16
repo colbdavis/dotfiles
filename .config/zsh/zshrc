@@ -212,14 +212,18 @@ eval "$(zoxide init zsh)"
 
 # fortune | cowsay -r echo "
 
-alias cd='z'
 alias dotf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias doco='docker compose'
 alias docklama='docker exec -it ollama ollama '
 alias grhist='cat ~/.config/zsh/history | grep'
 alias fuzzhist='cat ~/.config/zsh/history | fzf'
+alias timer='~/.config/waybar/scripts/timer.sh'
+alias pomo='~/.config/waybar/scripts/timer.sh pomo'
 
 export PATH="$HOME/.local/bin:$PATH"
 
 cat ~/todo.md
+
+# opencode
+export PATH=/home/tod/.opencode/bin:$PATH
