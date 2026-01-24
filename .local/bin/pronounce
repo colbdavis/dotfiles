@@ -10,8 +10,9 @@ echo "This program comes with ABSOLUTELY NO WARRANTY."
 echo "This is free software, and you are welcome to redistribute it under"
 echo "certain conditions. For details, see the LICENSE file."
 echo -e "\e[0m"
-echo "This frontend sends Web requests to the www.dictionary.com Online"
-echo "Dictionary as its backend."
+echo "This frontend sends Web requests to Google Translate Text-to-Speech API"
+echo "as its backend for pronunciation audio generation."
+echo "Note: This uses Google's undocumented TTS service and may change without notice."
 echo
 
 function main {
@@ -54,7 +55,7 @@ function download {
 	url=$1
 	dest=$2
 	if [ -z "$url" ]; then
-		echo "Error: No URL found for this word. Dictionary.com structure may have changed."
+		echo "Error: No URL found for this word. Google Translate TTS structure may have changed."
 		exit -1
 	fi
 	run_external_program wget "$url" -O "$dest"
@@ -90,6 +91,9 @@ function print_usage {
 	echo -e "\t-v              Prints version"
 	echo -e "\t-h              Prints this message"
 	echo -e "\e[0m"
+	echo -e "\n\e[0;33mAPI Information:\e[0m"
+	echo -e "Uses Google Translate TTS API (undocumented endpoint)"
+	echo -e "Audio files are cached locally in $PRONOUNCE_CACHE_DIR"
 }
 if [ -z "$1" -o "$1" = "-h" ]; then
 	print_usage
