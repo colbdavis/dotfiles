@@ -6,24 +6,24 @@ notify() {
 
 if pgrep -x syncthing > /dev/null 2>&1; then
     # Syncthing è attivo
-    CHOICE=$(printf "Aprire Browser\nDisattivare Syncthing" | wofi --dmenu --prompt "Syncthing attivo")
-    
-    if [ "$CHOICE" = "Aprire Browser" ]; then
+    CHOICE=$(printf "Open Browser\nDisable Syncthing" | wofi --dmenu --prompt "Syncthing active")
+
+    if [ "$CHOICE" = "Open Browser" ]; then
         io.gitlab.librewolf-community http://127.0.0.1:8384/ -p PAOLO &
-    elif [ "$CHOICE" = "Disattivare Syncthing" ]; then
+    elif [ "$CHOICE" = "Disable Syncthing" ]; then
         pkill -x syncthing
-        notify "Disattivato" "Disattivato processo syncthing"
+        notify "Disabled" "Disabled syncthing process"
         sleep 0.5
     fi
 else
     # Syncthing non è attivo
-    CHOICE=$(printf "Aprire Browser\nAttivare Syncthing" | wofi --dmenu --prompt "Syncthing inattivo")
-    
-    if [ "$CHOICE" = "Aprire Browser" ]; then
+    CHOICE=$(printf "Open Browser\nEnable Syncthing" | wofi --dmenu --prompt "Syncthing inactive")
+
+    if [ "$CHOICE" = "Open Browser" ]; then
         io.gitlab.librewolf-community http://127.0.0.1:8384/ -p PAOLO &
-    elif [ "$CHOICE" = "Attivare Syncthing" ]; then
+    elif [ "$CHOICE" = "Enable Syncthing" ]; then
         nohup syncthing --no-browser > /dev/null 2>&1 &
-        notify "Attivazione" "Avvio processo syncthing..."
+        notify "Activation" "Starting syncthing process..."
         sleep 1
     fi
 fi

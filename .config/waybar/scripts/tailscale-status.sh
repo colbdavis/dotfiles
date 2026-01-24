@@ -14,9 +14,9 @@ case "$STATUS" in
         echo '{"text": "󰛳", "tooltip": "Tailscale: connesso", "class": "connected"}'
         ;;
     "Stopped"|"NeedsLogin")
-        echo '{"text": "󰛲", "tooltip": "Tailscale: disconnesso", "class": "disconnected"}'
+        echo '{"text": "󰛲", "tooltip": "Tailscale: disconnected", "class": "disconnected"}'
         ;;
     *)
-        echo '{"text": "󰋗", "tooltip": "Tailscale: stato sconosciuto", "class": "unknown"}'
+        echo '{"text": "󰋗", "tooltip": "Tailscale: unknown state", "class": "unknown"}'
         ;;
 esac

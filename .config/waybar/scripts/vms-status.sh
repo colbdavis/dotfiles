@@ -22,7 +22,7 @@ fi
 # Send notification only if state changed
 if [ "$CLASS" != "$PREV_STATE" ]; then
     if [ "$CLASS" = "running" ]; then
-        notify-send "active VMs" "$RUNNING_VMS VM in execution"
+        notify-send "active VMs" "$RUNNING_VMS VM running"
     else
         notify-send "VMs off" "No active VM"
     fi

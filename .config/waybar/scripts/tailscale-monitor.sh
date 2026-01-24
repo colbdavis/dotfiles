@@ -30,13 +30,13 @@ CURR_STATE=$(get_status)
 if [ "$PREV_STATE" != "$CURR_STATE" ] && [ -n "$PREV_STATE" ]; then
     case "$CURR_STATE" in
         "connected")
-            notify-send -a "Tailscale" "Connesso" "VPN Tailscale attiva"
+            notify-send -a "Tailscale" "Connected" "Tailscale VPN active"
             ;;
         "disconnected")
-            notify-send -a "Tailscale" "Disconnesso" "VPN Tailscale non attiva"
+            notify-send -a "Tailscale" "Disconnected" "Tailscale VPN inactive"
             ;;
         "disabled")
-            notify-send -a "Tailscale" "Servizio disattivato" "tailscaled.service non è in esecuzione"
+            notify-send -a "Tailscale" "Service disabled" "tailscaled.service is not running"
             ;;
     esac
 fi

@@ -21,16 +21,16 @@ fi
 # Notifica solo se cambia
 if [ "$current_state" != "$previous_state" ]; then
   if [ "$current_state" = "running" ]; then
-    notify-send "AI Servers" "Server avviati" -i network-server
+    notify-send "AI Servers" "Servers started" -i network-server
   else
-    notify-send "AI Servers" "Server fermati" -i network-offline
+    notify-send "AI Servers" "Servers stopped" -i network-offline
   fi
   echo "$current_state" > "$STATE_FILE"
 fi
 
 # Output per Waybar
 if [ "$current_state" = "running" ]; then
-  echo "{\"text\":\"󰒋 AI\",\"class\":\"running\",\"tooltip\":\"AI servers attivi ($running)\"}"
+  echo "{"text":"󰒋 AI","class":"running","tooltip":"AI servers active ($running)"}"
 else
-  echo "{\"text\":\"󰒋 AI\",\"class\":\"stopped\",\"tooltip\":\"AI servers spenti\"}"
+  echo "{"text":"󰒋 AI","class":"stopped","tooltip":"AI servers stopped"}"
 fi
