@@ -30,7 +30,7 @@ fi
 
 # Output per Waybar
 if [ "$current_state" = "running" ]; then
-  echo "{"text":"󰒋 AI","class":"running","tooltip":"AI servers active ($running)"}"
+  echo '{"text":"󰒋 AI","class":"running","tooltip":"AI servers active ($running)"}'
 else
-  echo "{"text":"󰒋 AI","class":"stopped","tooltip":"AI servers stopped"}"
+  echo '{"text":"󰒋 AI","class":"stopped","tooltip":"AI servers stopped"}'
 fi
