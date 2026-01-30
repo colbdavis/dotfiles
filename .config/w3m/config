@@ -1,0 +1,17 @@
+# Enable image display
+display_image 1
+auto_image 1
+# Use Kitty graphics protocol (protocol 4)
+inline_img_protocol 4
+# Use kitten icat for image rendering with error suppression
+imgdisplay /usr/bin/kitten icat 2>/dev/null
+# Additional settings for better image handling
+image_scale 100
+ext_image_viewer 0
+# News reading optimization settings
+max_load_image 4
+max_render_tree_size 1048576
+accept_language en-US,en;q=0.9
+confirm_qq 0
+use_mouse 1
+color 1
