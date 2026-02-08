@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+# Script to convert wikipedia/wikiveristy (maybe test other) to markdown
 
 [[ -z "$1" ]] && { echo "Usage: $0 <WIKI_URL>"; exit 1; }
 
