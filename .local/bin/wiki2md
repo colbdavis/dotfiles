@@ -1,0 +1,16 @@
+#!/bin/bash
+
+[[ -z "$1" ]] && { echo "Usage: $0 <WIKI_URL>"; exit 1; }
+
+# Extract domain (e.g., it.wikipedia.org) and page title
+DOMAIN=$(echo "$1" | grep -oP '(?<=https://)[^/]+')
+TITLE=$(echo "$1" | sed 's|.*/wiki/||')
+FILENAME="${TITLE//[:\/]/_}.md"
+
+echo "Target: $DOMAIN | Page: $TITLE"
+
+# Fetch raw content and convert
+curl -sL -A "Mozilla/5.0" "https://$DOMAIN/w/index.php?title=${TITLE}&action=raw" | \
+pandoc -f mediawiki -t markdown --wrap=none -o "$FILENAME"
+
+[[ $? -eq 0 ]] && echo "Saved to $FILENAME" || echo "Conversion failed"
