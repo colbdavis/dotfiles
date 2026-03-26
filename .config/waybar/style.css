@@ -99,6 +99,23 @@ window#waybar {
     margin: 0 2px; 
 }
 
+#custom-protonvpn {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#custom-protonvpn.connected {
+    color: #a6e3a1;
+}
+
+#custom-protonvpn.disconnected {
+    color: #f38ba8;
+}
+
+#custom-protonvpn.unknown {
+    color: #f9e2af;
+}
+
 /* Stato attivo: Verde */
 #custom-vms.running {
     color: #a6e3a1; 

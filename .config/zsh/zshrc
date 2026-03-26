@@ -223,7 +223,12 @@ alias pomo='~/.config/waybar/scripts/timer.sh pomo'
 
 export PATH="$HOME/.local/bin:$PATH"
 
-cat ~/todo.md
 
 # opencode
-export PATH=/home/tod/.opencode/bin:$PATH
+export PATH=~/.opencode/bin:$PATH
+
+# Yarn bins
+export PATH=~/.yarn/bin:$PATH
+
+# cowsay
+fortune | cowsay -r

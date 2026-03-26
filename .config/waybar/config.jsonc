@@ -3,7 +3,7 @@
     "height": 24,
     "spacing": 4,
 
-    "modules-left": ["hyprland/workspaces", "custom/tailscale", "custom/syncthing", "custom/ai-servers", "custom/vms", "custom/timer"],
+    "modules-left": ["hyprland/workspaces", "custom/tailscale", "custom/syncthing", "custom/ai-servers", "custom/vms", "custom/protonvpn", "custom/timer"],
     "modules-center": ["clock"],
     "modules-right": ["custom/keymap", "tray", "pulseaudio","memory","battery","network"],
 
@@ -43,6 +43,15 @@
         "interval": 4,
         "on-click": "virt-manager",
         "format": " VM: {text}"
+    },
+
+    "custom/protonvpn": {
+        "exec": "~/.config/waybar/scripts/vpn-status.sh",
+        "return-type": "json",
+        "interval": 10,
+        "on-click": "~/.config/waybar/scripts/vpn-connect.sh",
+        "signal": 8,
+        "format": "{}"
     },
 
     "custom/timer": {
@@ -96,7 +105,7 @@
         "format-wifi": " {essid}",
         "format-ethernet": " Cable",
         "format-disconnected": " Disconnected",
-        "on-click": "kitty -- nmtui"
+        "on-click-middle": "kitty -- nmtui"
     },
 
     "hyprland/workspaces": {
