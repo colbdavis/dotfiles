@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-if ip link show wg0 &>/dev/null && ip addr show wg0 | grep -q "inet"; then
-    echo "{\"text\": \"🔒 VPN\", \"class\": \"connected\", \"tooltip\": \"Connected to ProtonVPN\"}"
+if ip addr show proton0 2>/dev/null | grep -q "inet"; then
+    echo "{\"text\": \"  VPN\", \"class\": \"connected\", \"tooltip\": \"Connected to ProtonVPN\"}"
 else
-    echo "{\"text\": \"🔓 VPN\", \"class\": \"disconnected\", \"tooltip\": \"VPN Disconnected\\nClick to connect\"}"
+    echo "{\"text\": \"  VPN\", \"class\": \"disconnected\", \"tooltip\": \"VPN Disconnected\nClick to connect\"}"
 fi
