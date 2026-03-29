@@ -79,6 +79,7 @@ window#waybar {
 #custom-syncthing.inactive {
     color: #f38ba8; /* rosso */
 }
+
 #custom-ai-servers {
     padding: 0 10px;
     margin: 0 2px;
@@ -124,6 +125,19 @@ window#waybar {
 /* Stato non attivo: Rosso Roseo */
 #custom-vms.stopped {
     color: #f38ba8; 
+}
+
+#custom-localsend {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#custom-localsend.active {
+    color: #a6e3a1; /* verde */
+}
+
+#custom-localsend.inactive {
+    color: #f38ba8; /* rosso */
 }
 
 
