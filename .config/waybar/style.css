@@ -11,14 +11,6 @@ label {
     font-family: "JetBrainsMono Nerd Font Mono";
 }
 
-
-/*window#waybar {
-    background-color: #282a36;
-    color: #f8f8f2;
-    opacity: 0.9;
-}*/
-
-
 window#waybar {
     font-family: "JetBrainsMono Nerd Font Mono";
     font-size: 13px;
@@ -27,7 +19,6 @@ window#waybar {
 }
 
 
-/* Stile per i pulsanti dei workspace */
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
@@ -80,20 +71,6 @@ window#waybar {
     color: #f38ba8; /* rosso */
 }
 
-#custom-ai-servers {
-    padding: 0 10px;
-    margin: 0 2px;
-}
-
-/* Stato ON */
-#custom-ai-servers.running {
-    color: #a6e3a1; /* stesso verde di tailscale connected */
-}
-
-/* Stato OFF */
-#custom-ai-servers.stopped {
-    color: #f38ba8; /* stesso rosso di tailscale disconnected */
-}
 
 #custom-vms {
     padding: 0 10px; 
