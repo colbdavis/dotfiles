@@ -1,8 +1,19 @@
 #!/bin/sh
 
-# Just updates my arch system with paru and flatpak, and local opencode 
+# Just updates my arch system with paru and flatpak
 # (if you have open Code installed with paru, npm, bun or others change this)
 # By C. B. Davis
+
+# Ensure at least 15% disk space is free
+TOTAL=$(df / | awk 'NR==2 {print $2}')
+USED=$(df / | awk 'NR==2 {print $3}')
+FREE=$((TOTAL - USED))
+PERCENT_FREE=$((FREE * 100 / TOTAL))
+
+if [ "$PERCENT_FREE" -lt 15 ]; then
+    echo "Error: Only $PERCENT_FREE% disk space free (minimum 15% required)"
+    exit 1
+fi
 
 echo "(1) Update with paru
 "
@@ -14,9 +25,3 @@ echo "
 "
 
 flatpak update
-
-echo "
-(3) Update Open Code
-"
-
-opencode upgrade
