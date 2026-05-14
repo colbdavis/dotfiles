@@ -6,6 +6,9 @@ source ~/.local/bin/zinit/zinit.zsh
 # Plugin
 # =====================
 
+# Vi-mode avanzato (text-objects, surround, visual mode, etc.)
+zinit light jeffreytse/zsh-vi-mode
+
 # Autosuggestions
 zinit light zsh-users/zsh-autosuggestions
 
@@ -18,7 +21,7 @@ zinit light zsh-users/zsh-history-substring-search
 # =====================
 # Keybindings Vim
 # =====================
-bindkey -v
+# bindkey -v è gestito da zsh-vi-mode
 
 # Esc più reattivo
 export KEYTIMEOUT=1
@@ -229,6 +232,11 @@ export PATH=~/.opencode/bin:$PATH
 
 # Yarn bins
 export PATH=~/.yarn/bin:$PATH
+
+# Bun bins
+export PATH="/home/tod/.bun/bin:$PATH"
+# Cargo bins
+export PATH="/home/tod/.cargo/bin:$PATH"
 
 # cowsay
 fortune | cowsay -r
