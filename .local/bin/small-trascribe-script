@@ -1,0 +1,112 @@
+#!/bin/sh
+# small-transcribe-script.sh - Registra audio e trascrivi con Groq Whisper
+# Compatibile POSIX sh (nessuna sintassi Bash)
+
+# --- Configurazione ---
+ENV_FILE="$HOME/.config/small-transcribe/.env"
+AUDIO_FILE="/tmp/whisper_recording.wav"
+GROQ_API_URL="https://api.groq.com/openai/v1/audio/transcriptions"
+
+# --- Cleanup ---
+cleanup() {
+    rm -f "$AUDIO_FILE"
+}
+
+# --- Caricamento .env ---
+load_env() {
+    if [ ! -f "$ENV_FILE" ]; then
+        echo "Errore: file $ENV_FILE non trovato" >&2
+        exit 1
+    fi
+
+    if [ ! -r "$ENV_FILE" ]; then
+        echo "Errore: file $ENV_FILE non leggibile" >&2
+        exit 1
+    fi
+
+    GROQ_API_KEY=$(grep '^GROQ_API_KEY=' "$ENV_FILE" | cut -d'=' -f2-)
+
+    if [ -z "$GROQ_API_KEY" ]; then
+        echo "Errore: GROQ_API_KEY non trovata in $ENV_FILE" >&2
+        exit 1
+    fi
+}
+
+# --- Verifica dipendenze ---
+check_deps() {
+    if ! command -v sox >/dev/null 2>&1; then
+        echo "Errore: sox non installato. Installa con: sudo apt install sox" >&2
+        exit 2
+    fi
+
+    if ! command -v curl >/dev/null 2>&1; then
+        echo "Errore: curl non installato. Installa con: sudo apt install curl" >&2
+        exit 3
+    fi
+
+    if ! command -v wl-copy >/dev/null 2>&1; then
+        echo "Errore: wl-copy non installato. Installa con: sudo apt install wl-clipboard" >&2
+        exit 4
+    fi
+}
+
+# --- Registrazione audio ---
+record_audio() {
+    echo "Registrazione in corso... Premi CTRL+C per fermare."
+    sox -d -r 16000 -c 1 -b 16 -e signed-integer "$AUDIO_FILE"
+    echo "Registrazione completata."
+}
+
+# --- Trascrizione via Groq API ---
+transcribe() {
+    _ws_response=$(curl -s -w "\n%{http_code}" \
+        -X POST "$GROQ_API_URL" \
+        -H "Authorization: Bearer $GROQ_API_KEY" \
+        -F "file=@$AUDIO_FILE" \
+        -F "model=whisper-large-v3-turbo" \
+        -F "language=it" \
+        -F "response_format=text")
+
+    _ws_http_code=$(echo "$_ws_response" | tail -1)
+    _ws_body=$(echo "$_ws_response" | sed '$d')
+
+    if [ "$_ws_http_code" != "200" ]; then
+        echo "Errore API Groq (HTTP $_ws_http_code): $_ws_body" >&2
+        exit 5
+    fi
+
+    if [ -z "$_ws_body" ]; then
+        echo "Errore: risposta vuota da Groq" >&2
+        exit 6
+    fi
+
+    echo "$_ws_body"
+}
+
+# --- Gestione SIGINT ---
+handle_int() {
+    cleanup
+    echo "Registrazione interrotta dall'utente."
+    exit 130
+}
+
+# --- Main ---
+main() {
+    load_env
+    check_deps
+
+    trap cleanup EXIT
+    trap handle_int INT
+
+    # Durante la registrazione, lascia che sox riceva SIGINT direttamente
+    trap - INT
+    record_audio
+    trap handle_int INT
+
+    _ws_transcription=$(transcribe)
+
+    echo "$_ws_transcription" | wl-copy
+    echo "Trascrizione copiata negli appunti: $_ws_transcription"
+}
+
+main "$@"
