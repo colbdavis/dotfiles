@@ -3,9 +3,9 @@
     "height": 24,
     "spacing": 4,
 
-    "modules-left": ["hyprland/workspaces", "custom/tailscale", "custom/syncthing", "custom/ai-servers","custom/vms", "custom/protonvpn",  "custom/localsend", "custom/timer"],
+    "modules-left": ["ext/workspaces", "custom/tailscale", "custom/syncthing", "custom/ai-servers","custom/vms", "custom/protonvpn",  "custom/localsend", "custom/timer"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/keymap", "tray", "pulseaudio","memory","battery","network"],
+    "modules-right": ["custom/keymap", "tray", "pulseaudio","memory","custom/battery","network"],
 
     // Modules at root level
 
@@ -92,13 +92,10 @@
         "interval": 30
     },
 
-    "battery": {
-        "states": {"warning":30,"critical":15},
-        "format": "{icon} {capacity}%",
-        "format-charging": "⚡ {capacity}%",
-        "format-plugged": "🔌 {capacity}%",
-        "format-icons": ["","","","",""],
-        "interval": 60
+    "custom/battery": {
+        "exec": "bash ~/.config/waybar/scripts/battery_waybar.sh",
+        "interval": 10,
+        "return-type": "json"
     },
 
     "network": {
@@ -108,10 +105,10 @@
         "on-click-middle": "kitty -- nmtui"
     },
 
-    "hyprland/workspaces": {
+    "ext/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        "persistent-worksets": ["*"]
+        "sort-by-id": true
     }
 }
 
