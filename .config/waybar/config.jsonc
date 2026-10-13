@@ -1,7 +1,7 @@
 {
     "position": "top",
     "height": 32,
-    "spacing": 4,
+    "spacing": 2,
     "modules-left": [
         "ext/workspaces",
         "image#tailscale",
@@ -86,64 +86,64 @@
         "sort-by-name": true
     },
     "tray": {
-        "icon-size": 18,
-        "spacing": 12
+        "icon-size": 16,
+        "spacing": 8
     },
     "image#tailscale": {
         "exec": "~/.config/waybar/scripts/dock-icons.py tailscale",
-        "size": 18,
+        "size": 16,
         "interval": 5,
         "on-click": "~/.config/waybar/scripts/tailscale-toggle.sh",
         "signal": 8
     },
     "image#syncthing": {
         "exec": "~/.config/waybar/scripts/dock-icons.py syncthing",
-        "size": 18,
+        "size": 16,
         "interval": 5,
         "on-click": "~/.config/waybar/scripts/syncthing-toggle.sh",
         "signal": 8
     },
     "image#protonvpn": {
         "exec": "~/.config/waybar/scripts/dock-icons.py protonvpn",
-        "size": 18,
+        "size": 16,
         "interval": 10,
         "on-click": "~/.config/waybar/scripts/vpn-toggle.sh",
         "signal": 8
     },
     "image#localsend": {
         "exec": "~/.config/waybar/scripts/dock-icons.py localsend",
-        "size": 18,
+        "size": 16,
         "interval": 2,
         "on-click": "~/.config/waybar/scripts/localsend-toggle.sh",
         "signal": 8
     },
     "image#t3code": {
         "exec": "~/.config/waybar/scripts/dock-icons.py t3code",
-        "size": 18,
+        "size": 16,
         "interval": 3,
         "on-click": "~/.config/waybar/scripts/dock-apps.py launch t3code"
     },
     "image#pi": {
         "exec": "~/.config/waybar/scripts/dock-icons.py pi",
-        "size": 18,
+        "size": 16,
         "interval": 3,
         "on-click": "~/.config/waybar/scripts/dock-apps.py launch pi"
     },
     "image#octo": {
         "exec": "~/.config/waybar/scripts/dock-icons.py octo",
-        "size": 18,
+        "size": 16,
         "interval": 3,
         "on-click": "~/.config/waybar/scripts/dock-apps.py launch octo"
     },
     "image#slack": {
         "exec": "~/.config/waybar/scripts/dock-icons.py slack",
-        "size": 18,
+        "size": 16,
         "interval": 3,
         "on-click": "~/.config/waybar/scripts/dock-apps.py launch slack"
     },
     "image#vms": {
         "exec": "~/.config/waybar/scripts/dock-icons.py vms",
-        "size": 18,
+        "size": 16,
         "interval": 4,
         "on-click": "virt-manager"
     }

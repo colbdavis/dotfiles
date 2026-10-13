@@ -36,10 +36,10 @@ window#waybar {
     background-color: #ff5555;
 }
 
-/* Loghi SVG monocromatici, icone 18 px in celle quadrate 32 px. */
+/* Loghi SVG monocromatici, icone 16 px in celle quadrate 28 px. */
 #image {
-    min-width: 32px;
-    min-height: 32px;
+    min-width: 28px;
+    min-height: 28px;
     padding: 0;
     margin: 0;
     border-radius: 5px;
@@ -52,12 +52,12 @@ window#waybar {
     margin: 0;
 }
 #tray {
-    padding: 0 4px;
+    padding: 0 2px;
     margin: 0;
 }
 #tray > widget {
-    min-width: 32px;
-    min-height: 32px;
+    min-width: 28px;
+    min-height: 28px;
 }
 
 /* Waybar Timer - Coherent with other modules */
@@ -65,7 +65,7 @@ window#waybar {
     padding: 0;
     margin: 0;
     font-size: 16px;
-    min-width: 32px;
+    min-width: 28px;
     border-radius: 6px;
     border: none;
     font-family: "JetBrainsMono Nerd Font Mono";
@@ -75,7 +75,7 @@ window#waybar {
 
 /* --- STATE: DISABLED (00:00, Idle) --- */
 #custom-timer.disabled {
-    font-size: 18px;
+    font-size: 16px;
     background-color: transparent;
     color: #c5bdd9;
     opacity: 1;

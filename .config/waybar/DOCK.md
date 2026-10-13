@@ -1,6 +1,6 @@
 # Dock Waybar
 
-Loghi SVG monocromatici da 18 px in celle 32 × 32 px, grigio lavanda #c5bdd9 a riposo e verde Dracula #50fa7b quando attive. Tray accanto ai launcher, LocalSend scompare dal dock mentre il processo è attivo. VM resta come icona con stato nel tooltip. Tailscale e Proton sono verdi quando connessi; Syncthing, T3 e Pi quando in esecuzione; Octo durante la sessione SSH; Slack mentre il browser della web app è in esecuzione.
+Loghi SVG monocromatici da 16 px in celle 28 × 28 px, grigio lavanda #c5bdd9 a riposo e verde Dracula #50fa7b quando attive. Tray accanto ai launcher, LocalSend scompare dal dock mentre il processo è attivo. VM resta come icona con stato nel tooltip. Tailscale e Proton sono verdi quando connessi; Syncthing, T3 e Pi quando in esecuzione; Octo durante la sessione SSH; Slack mentre il browser della web app è in esecuzione.
 
 ## Configurazione personale
 
@@ -35,6 +35,6 @@ I click dei servizi esistenti rimangono quelli della configurazione precedente. 
 
 I backup locali sono in `~/.config/waybar/back/` e sono esclusi da Git. Ogni cartella contiene `waybar.tar.gz` e `restore.sh`. Esegui `bash ~/.config/waybar/back/<backup>/restore.sh` per ripristinare quel backup. Il ripristino salva prima la configurazione corrente in `back/pre-restore-*`, poi ricarica Waybar.
 
-Timer a riposo: solo clessidra da 18 px, senza bordo né sfondo.
+Timer a riposo: solo clessidra da 16 px, senza bordo né sfondo.
 
 Tutti i tooltip gestiti dalla configurazione Waybar sono in inglese. I tooltip delle applet nel tray vengono forniti dalle rispettive applicazioni.
