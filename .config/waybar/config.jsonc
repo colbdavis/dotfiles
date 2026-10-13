@@ -1,114 +1,150 @@
 {
     "position": "top",
-    "height": 24,
+    "height": 32,
     "spacing": 4,
-
-    "modules-left": ["ext/workspaces", "custom/tailscale", "custom/syncthing", "custom/ai-servers","custom/vms", "custom/protonvpn",  "custom/localsend", "custom/timer"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/keymap", "tray", "pulseaudio","memory","custom/battery","network"],
-
-    // Modules at root level
-
-    "custom/tailscale": {
-        "exec": "~/.config/waybar/scripts/tailscale-status.sh",
-        "return-type": "json",
-        "interval": 5,
-        "on-click": "~/.config/waybar/scripts/tailscale-toggle.sh",
-        "signal": 8,
-        "format": "{} Tailnet "
-    },
-
-    "custom/syncthing" : {
-        "exec": "~/.config/waybar/scripts/syncthing-status.sh",
-        "return-type": "json",
-        "interval": 5,
-        "on-click": "~/.config/waybar/scripts/syncthing-toggle.sh",
-        "signal": 8,
-        "format": "{} Syncthing "
- 
-    },
-
-    "custom/vms": {
-        "exec": "~/.config/waybar/scripts/vms-status.sh",
-        "return-type": "json",
-        "interval": 4,
-        "on-click": "virt-manager",
-        "format": " VM: {text}"
-    },
-
-    "custom/protonvpn": {
-        "exec": "~/.config/waybar/scripts/vpn-status.sh",
-        "return-type": "json",
-        "interval": 10,
-        "on-click": "~/.config/waybar/scripts/vpn-toggle.sh",
-        "signal": 8,
-        "format": "{}"
-    },
-
-    "custom/localsend": {
-        "exec": "~/.config/waybar/scripts/localsend-status.sh",
-        "return-type": "json",
-        "interval": 5,
-        "on-click": "~/.config/waybar/scripts/localsend-toggle.sh",
-        "signal": 8,
-        "format": "{} LocalSend"
-    },
-
+    "modules-left": [
+        "ext/workspaces",
+        "image#tailscale",
+        "image#syncthing",
+        "image#protonvpn",
+        "image#localsend",
+        "image#t3code",
+        "image#pi",
+        "image#octo",
+        "image#slack",
+        "tray",
+        "image#vms",
+        "custom/timer"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/keymap",
+        "pulseaudio",
+        "memory",
+        "custom/battery",
+        "network"
+    ],
     "custom/timer": {
-    "exec": "~/.config/waybar/scripts/timer.sh",
-    "return-type": "json",
-    "format": "{}",
-    "on-click": "~/.config/waybar/scripts/timer.sh click",
-    "on-click-right": "~/.config/waybar/scripts/timer.sh right",
-    "on-click-middle": "~/.config/waybar/scripts/timer.sh middle",
-    "on-scroll-up": "~/.config/waybar/scripts/timer.sh down",  // previously up
-    "on-scroll-down": "~/.config/waybar/scripts/timer.sh up",  // previously down
-    "tooltip": true,
-    "escape": true
+        "exec": "~/.config/waybar/scripts/timer.sh",
+        "return-type": "json",
+        "format": "{}",
+        "on-click": "~/.config/waybar/scripts/timer.sh click",
+        "on-click-right": "~/.config/waybar/scripts/timer.sh right",
+        "on-click-middle": "~/.config/waybar/scripts/timer.sh middle",
+        "on-scroll-up": "~/.config/waybar/scripts/timer.sh down",
+        "on-scroll-down": "~/.config/waybar/scripts/timer.sh up",
+        "tooltip": true,
+        "escape": true
     },
-
     "clock": {
-        "format": "{:%d - %H:%M}"
+        "format": "{:%d - %H:%M}",
+        "locale": "en_US.utf8",
+        "tooltip-format": "{:%A, %d %B %Y}"
     },
-
     "custom/keymap": {
         "format": "⌨ {}",
         "exec": "~/.config/waybar/scripts/keymap.sh",
         "interval": 2,
         "on-click": "~/.config/waybar/scripts/keymap.sh toggle"
     },
-    
     "pulseaudio": {
         "format": " {volume}%",
         "format-muted": " Mute",
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "tooltip-format": "Output: {desc}\nVolume: {volume}%"
     },
-
     "memory": {
         "format": "{used:0.1f}G/{total:0.1f}G",
         "on-click": "kitty -- htop",
-        "interval": 30
+        "interval": 30,
+        "tooltip-format": "Memory: {used:0.1f} / {total:0.1f} GiB used"
     },
-
     "custom/battery": {
         "exec": "bash ~/.config/waybar/scripts/battery_waybar.sh",
         "interval": 10,
         "return-type": "json"
     },
-
     "network": {
         "format-wifi": " {essid}",
         "format-ethernet": " Cable",
         "format-disconnected": " Disconnected",
-        "on-click-middle": "kitty -- nmtui"
+        "on-click-middle": "kitty -- nmtui",
+        "tooltip-format": "Interface: {ifname}\nIP address: {ipaddr}",
+        "tooltip-format-wifi": "Wi-Fi: {essid}\nSignal: {signalStrength}%\nIP address: {ipaddr}",
+        "tooltip-format-ethernet": "Ethernet: {ifname}\nIP address: {ipaddr}",
+        "tooltip-format-disconnected": "Network disconnected",
+        "tooltip-format-disabled": "Wi-Fi disabled"
     },
-
     "ext/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        "sort-by-id": true
+        "sort-by-id": false,
+        "sort-by-name": true
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 12
+    },
+    "image#tailscale": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py tailscale",
+        "size": 18,
+        "interval": 5,
+        "on-click": "~/.config/waybar/scripts/tailscale-toggle.sh",
+        "signal": 8
+    },
+    "image#syncthing": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py syncthing",
+        "size": 18,
+        "interval": 5,
+        "on-click": "~/.config/waybar/scripts/syncthing-toggle.sh",
+        "signal": 8
+    },
+    "image#protonvpn": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py protonvpn",
+        "size": 18,
+        "interval": 10,
+        "on-click": "~/.config/waybar/scripts/vpn-toggle.sh",
+        "signal": 8
+    },
+    "image#localsend": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py localsend",
+        "size": 18,
+        "interval": 2,
+        "on-click": "~/.config/waybar/scripts/localsend-toggle.sh",
+        "signal": 8
+    },
+    "image#t3code": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py t3code",
+        "size": 18,
+        "interval": 3,
+        "on-click": "~/.config/waybar/scripts/dock-apps.py launch t3code"
+    },
+    "image#pi": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py pi",
+        "size": 18,
+        "interval": 3,
+        "on-click": "~/.config/waybar/scripts/dock-apps.py launch pi"
+    },
+    "image#octo": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py octo",
+        "size": 18,
+        "interval": 3,
+        "on-click": "~/.config/waybar/scripts/dock-apps.py launch octo"
+    },
+    "image#slack": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py slack",
+        "size": 18,
+        "interval": 3,
+        "on-click": "~/.config/waybar/scripts/dock-apps.py launch slack"
+    },
+    "image#vms": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py vms",
+        "size": 18,
+        "interval": 4,
+        "on-click": "virt-manager"
     }
 }
-

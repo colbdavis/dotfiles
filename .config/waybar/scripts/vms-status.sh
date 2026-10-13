@@ -30,4 +30,4 @@ if [ "$CLASS" != "$PREV_STATE" ]; then
 fi
 
 # Output JSON per Waybar
-echo "{\"text\": \"$TEXT\", \"class\": \"$CLASS\", \"tooltip\": \"active VMs: $RUNNING_VMS\"}"
+echo "{\"text\": \"$TEXT\", \"class\": \"$CLASS\", \"tooltip\": \"Running VMs: $RUNNING_VMS\"}"

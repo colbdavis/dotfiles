@@ -22,13 +22,13 @@ PLUG=$'\uf1e6'
 # Formatta il testo
 if [[ "$BAT_STATUS" == "Charging" || "$BAT_STATUS" == "Full" ]]; then
     FORMAT="$BOLT $BAT_PERCENT%"
-    TOOLTIP="Carica in corso: $BAT_PERCENT%"
+    TOOLTIP="Charging: $BAT_PERCENT%"
 elif [[ "$BAT_STATUS" == "Discharging" ]]; then
     FORMAT="$BAT_ICON $BAT_PERCENT%"
-    TOOLTIP="Batteria: $BAT_PERCENT%"
+    TOOLTIP="Battery: $BAT_PERCENT%"
 else
     FORMAT="$PLUG $BAT_PERCENT%"
-    TOOLTIP="Alimentazione: $BAT_PERCENT%"
+    TOOLTIP="External power: $BAT_PERCENT%"
 fi
 
 # Notifiche

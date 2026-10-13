@@ -1,1 +1,11 @@
 .config/zsh/history
+.config/w3m/history
+/.config/w3m/cookie
+
+.env
+.env.*
+*.env
+!.env.example
+/.config/waybar/back/
+__pycache__/
+*.pyc

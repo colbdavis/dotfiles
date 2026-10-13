@@ -26,7 +26,7 @@ SOUND_BREAK_END="${HOME}/.config/waybar/sounds/timer.mp3"
 SOUND_COMPLETE="${HOME}/.config/waybar/sounds/timer.mp3"
 
 # --- ICONS ---
-ICON_DISABLED="󰔞 "
+ICON_DISABLED="󰔟"
 ICON_IDLE="󰔛"
 ICON_SELECT="󱫣"
 ICON_PAUSE="󱫟"
@@ -36,12 +36,12 @@ ICON_DONE="󱫑"
 ICON_RESET="󱫥"
 
 # Pomodoro Icons
-ICON_POMO_IDLE=""
-ICON_POMO_START=""
-ICON_POMO_HALF=""
-ICON_POMO_END=""
-ICON_POMO_DONE=""
-ICON_POMO_BREAK=""
+ICON_POMO_IDLE="󰔟"
+ICON_POMO_START="󱫡"
+ICON_POMO_HALF="󱫡"
+ICON_POMO_END="󱫍"
+ICON_POMO_DONE="󱫑"
+ICON_POMO_BREAK="󰅶"
 
 # Files (Optimized to use RAM instead of Disk)
 STATE_FILE="/dev/shm/waybar_timer.json"
@@ -355,7 +355,7 @@ while true; do
             echo "{\"text\": \"$ICON $TEXT\", \"class\": \"pomo_msg\"}"
             # Short sleep for animation, can stay as sleep or be read -t
             sleep 1.5
-            WS "RUNNING" "$SEC_SET" "$NOW" "0" "$NEW_ACT" "$PRESET_IDX" "$MODE" "$P_STAGE" "$P_CURRENT" "$P_TOTAL" "$P_WORK_LEN" "$P_BREAK_LEN" "$P_EDIT_FOCUS"
+            WS "RUNNING" "$SEC_SET" "$NOW" "0" "$NOW" "$PRESET_IDX" "$MODE" "$P_STAGE" "$P_CURRENT" "$P_TOTAL" "$P_WORK_LEN" "$P_BREAK_LEN" "$P_EDIT_FOCUS"
             continue ;;
 
         "RUNNING")
@@ -411,12 +411,15 @@ while true; do
                 TOOLTIP="Timer Running\nLeft Click: Pause\nMiddle Click: Reset\nScroll: Adjust Time (± 1m)"
             fi
             TEXT="$(format_time $REM)"
+            if [ "$MODE" == "1" ]; then TEXT="$TEXT · $P_CURRENT/$P_TOTAL"; fi
             ;;
 
         "PAUSED")
             if [ "$MODE" == "1" ]; then ICON="$ICON_POMO_BREAK"; TOOLTIP="Pomodoro Paused\nLeft Click: Resume\nScroll: Adjust Time (± 1m)\nMiddle Click: Reset"
             else ICON="$ICON_PAUSE"; TOOLTIP="Timer Paused\nLeft Click: Resume\nScroll: Adjust Time (± 1m)\nMiddle Click: Reset"; fi
-            TEXT="$(format_time $PAUSE_REM)"; CLASS="paused" ;;
+            TEXT="$(format_time $PAUSE_REM)"
+            if [ "$MODE" == "1" ]; then TEXT="$TEXT · $P_CURRENT/$P_TOTAL"; fi
+            CLASS="paused" ;;
 
         "DONE")
             if [ "$MODE" == "1" ]; then ICON="$ICON_POMO_DONE"; TOOLTIP="Pomodoro Complete"

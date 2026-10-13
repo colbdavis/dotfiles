@@ -3,7 +3,6 @@
 * {
     border: none;
     border-radius: 0;
-    font-size: 13px;
     min-height: 0;
 }
 
@@ -37,103 +36,50 @@ window#waybar {
     background-color: #ff5555;
 }
 
-#custom-tailscale {
-    padding: 0 10px;
-    margin: 0 2px;
+/* Loghi SVG monocromatici, icone 18 px in celle quadrate 32 px. */
+#image {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
 }
-
-#custom-tailscale.connected {
-    color: #a6e3a1; /* verde */
+#image:hover { background-color: #44475a; }
+#image.empty {
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
 }
-
-#custom-tailscale.disconnected {
-    color: #f38ba8; /* rosso */
+#tray {
+    padding: 0 4px;
+    margin: 0;
 }
-
-#custom-tailscale.disabled {
-    color: #6c7086; /* grigio */
+#tray > widget {
+    min-width: 32px;
+    min-height: 32px;
 }
-
-#custom-tailscale.unknown {
-    color: #f9e2af; /* giallo */
-}
-
-#custom-syncthing {
-    padding: 0 10px;
-    margin: 0 2px;
-}
-
-#custom-syncthing.active {
-    color: #a6e3a1; /* verde */
-}
-
-#custom-syncthing.inactive {
-    color: #f38ba8; /* rosso */
-}
-
-
-#custom-vms {
-    padding: 0 10px; 
-    margin: 0 2px; 
-}
-
-#custom-protonvpn {
-    padding: 0 10px;
-    margin: 0 2px;
-}
-
-#custom-protonvpn.connected {
-    color: #a6e3a1;
-}
-
-#custom-protonvpn.disconnected {
-    color: #f38ba8;
-}
-
-#custom-protonvpn.unknown {
-    color: #f9e2af;
-}
-
-/* Stato attivo: Verde */
-#custom-vms.running {
-    color: #a6e3a1; 
-}
-
-/* Stato non attivo: Rosso Roseo */
-#custom-vms.stopped {
-    color: #f38ba8; 
-}
-
-#custom-localsend {
-    padding: 0 10px;
-    margin: 0 2px;
-}
-
-#custom-localsend.active {
-    color: #a6e3a1; /* verde */
-}
-
-#custom-localsend.inactive {
-    color: #f38ba8; /* rosso */
-}
-
 
 /* Waybar Timer - Coherent with other modules */
 #custom-timer {
-    padding: 0 10px;
-    margin: 0 2px;
-    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    min-width: 32px;
+    border-radius: 6px;
+    border: none;
     font-family: "JetBrainsMono Nerd Font Mono";
-    font-weight: normal;
+    font-weight: bold;
     transition: all 0.2s ease;
 }
 
 /* --- STATE: DISABLED (00:00, Idle) --- */
 #custom-timer.disabled {
+    font-size: 18px;
     background-color: transparent;
-    color: #6272a4;
-    opacity: 0.6;
-    font-weight: normal;
+    color: #c5bdd9;
+    opacity: 1;
+    font-weight: bold;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
@@ -141,8 +87,8 @@ window#waybar {
 
 /* --- STATE: IDLE (Active but 00:00) --- */
 #custom-timer.idle {
-    background-color: transparent;
-    color: #6272a4;
+    background-color: #44475a;
+    color: #c5bdd9;
 }
 
 /* --- STATE: SELECTION MODE --- */
@@ -153,19 +99,19 @@ window#waybar {
 
 /* --- STATE: RUNNING (Normal Timer & Pomodoro Work) --- */
 #custom-timer.running {
-    background-color: transparent;
+    background-color: #44475a;
     color: #50fa7b;
 }
 
 /* --- STATE: POMODORO BREAK --- */
 #custom-timer.pomo_break {
-    background-color: transparent;
+    background-color: #44475a;
     color: #ffb86c;
 }
 
 /* --- STATE: POMODORO MESSAGE --- */
 #custom-timer.pomo_msg {
-    background-color: transparent;
+    background-color: #44475a;
     color: #bd93f9;
 }
 
@@ -213,10 +159,10 @@ window#waybar {
 }
 
 /* Stile per i moduli sulla destra */
-#custom.keymap,
+#custom-keymap,
 #pulseaudio,
 #memory,
-#battery,
+#custom-battery,
 #network,
 #clock {
     padding: 0 10px;
