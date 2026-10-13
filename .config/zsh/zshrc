@@ -238,5 +238,13 @@ export PATH="/home/tod/.bun/bin:$PATH"
 # Cargo bins
 export PATH="/home/tod/.cargo/bin:$PATH"
 
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PNPM_HOME/bin:$PATH"
+
+# Flutter and Android development
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export PATH="$HOME/.local/flutter/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+#
 # cowsay
 fortune | cowsay -r

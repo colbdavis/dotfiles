@@ -25,3 +25,8 @@ echo "
 "
 
 flatpak update
+
+echo "
+(3) Update Codex via pnpm
+"
+pnpm update -g @openai/codex

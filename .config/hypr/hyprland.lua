@@ -178,6 +178,14 @@ hl.device({
     sensitivity = -0.5,
 })
 
+-- Always start Kitty windows tiled (manual floating still works).
+hl.window_rule({
+    name = "kitty-start-tiled",
+    match = { class = "^kitty$" },
+    tile = true,
+    suppress_event = "maximize",
+})
+
 -----------------
 -- Keybindings --
 -----------------
