@@ -71,7 +71,7 @@ def main():
     action, app = sys.argv[1:]
     settings = load_settings(ROOT)
     if action == "ssh":
-        command = ["kitty", "--class", CLASSES["octo"], "--title", "SSH · Octo", "--", *ssh_command(settings)]
+        command = ["kitty", "--class", CLASSES["octo"], "--title", "SSH · Octo", "--start-as", "normal", "--", *ssh_command(settings)]
         os.execvp(command[0], command)
     missing = (app == 'octo' and not settings['octo_host']) or (app == 'slack' and not settings['slack_url'])
     if action == 'status':
