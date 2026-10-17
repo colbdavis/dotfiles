@@ -10,7 +10,7 @@ import urllib.request
 
 
 def fetch(text, destination):
-    query = urllib.parse.urlencode({"ie": "UTF-8", "client": "tw-ob", "tl": "zh-CN", "q": text})
+    query = urllib.parse.urlencode({"ie": "UTF-8", "client": "tw-ob", "tl": "zh-CN", "ttsspeed": "0.24", "q": text})
     request = urllib.request.Request(
         "https://translate.google.com/translate_tts?" + query,
         headers={"User-Agent": "Mozilla/5.0"},
