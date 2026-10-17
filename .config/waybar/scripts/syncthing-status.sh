@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Controlla se il processo syncthing è realmente in esecuzione
+# Check whether the syncthing process is actually running
 # Esclude grep e altri script dal conteggio
 if pgrep -x syncthing > /dev/null 2>&1; then
     echo '{"text": "󰤲", "tooltip": "Syncthing: active", "class": "active"}'

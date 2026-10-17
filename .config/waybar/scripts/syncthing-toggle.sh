@@ -16,7 +16,7 @@ if pgrep -x syncthing > /dev/null 2>&1; then
         sleep 0.5
     fi
 else
-    # Syncthing non è attivo
+    # Syncthing is not active
     CHOICE=$(printf "Open Browser\nEnable Syncthing" | wofi --dmenu --prompt "Syncthing inactive")
 
     if [ "$CHOICE" = "Open Browser" ]; then

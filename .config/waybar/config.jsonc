@@ -13,6 +13,7 @@
         "image#octo",
         "image#slack",
         "image#obsidian",
+        "image#anki",
         "tray",
         "image#vms",
         "custom/timer"
@@ -147,6 +148,12 @@
         "size": 16,
         "interval": 4,
         "on-click": "virt-manager"
+    },
+    "image#anki": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py anki",
+        "size": 16,
+        "interval": 3,
+        "on-click": "~/.config/waybar/scripts/dock-apps.py launch anki"
     },
     "image#obsidian": {
         "exec": "~/.config/waybar/scripts/dock-icons.py obsidian",

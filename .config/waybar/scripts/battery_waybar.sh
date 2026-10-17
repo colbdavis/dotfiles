@@ -4,14 +4,14 @@
 WARNING_BATTERY=30
 CRITICAL_BATTERY=10
 
-# File temporaneo per tracciare lo stato precedente
+# Temporary file for tracking the previous status
 STATE_FILE="/tmp/battery_state_prev"
 
-# Leggi lo stato della batteria
+# Read the battery status
 BAT_PERCENT=$(cat /sys/class/power_supply/BAT*/capacity 2>/dev/null || acpi -b | awk '{print $4}' | tr -d '%')
 BAT_STATUS=$(cat /sys/class/power_supply/BAT*/status 2>/dev/null || acpi -b | awk '{print $3}' | tr -d ',')
 
-# Nerd Font icone batteria (U+F244..U+F240)
+# Nerd Font battery icons (U+F244..U+F240)
 BAT_ICONS=($'\uf244' $'\uf243' $'\uf242' $'\uf241' $'\uf240')
 BAT_ICON_INDEX=$(( (BAT_PERCENT * (${#BAT_ICONS[@]} - 1) + 99) / 100 ))
 BAT_ICON="${BAT_ICONS[$BAT_ICON_INDEX]}"
@@ -19,7 +19,7 @@ BAT_ICON="${BAT_ICONS[$BAT_ICON_INDEX]}"
 BOLT=$'\uf0e7'
 PLUG=$'\uf1e6'
 
-# Formatta il testo
+# Format the text
 if [[ "$BAT_STATUS" == "Charging" || "$BAT_STATUS" == "Full" ]]; then
     FORMAT="$BOLT $BAT_PERCENT%"
     TOOLTIP="Charging: $BAT_PERCENT%"
@@ -37,10 +37,10 @@ if [ -f "$STATE_FILE" ]; then
     PREV_STATE=$(cat "$STATE_FILE")
 fi
 
-# Notifica solo quando la batteria è in scarica.
+# Notify only when the battery is discharging.
 if [[ "$BAT_STATUS" != "Discharging" ]]; then
     echo "" > "$STATE_FILE"
-# Notifica sotto il 30%
+# Notify below 30%
 elif [ "$BAT_PERCENT" -le "$WARNING_BATTERY" ] && [ "$BAT_PERCENT" -gt "$CRITICAL_BATTERY" ]; then
     if [ "$PREV_STATE" != "$BAT_PERCENT" ]; then
         notify-send -u critical "Low Battery" "$BAT_PERCENT% lasting!"
@@ -49,10 +49,10 @@ elif [ "$BAT_PERCENT" -le "$WARNING_BATTERY" ] && [ "$BAT_PERCENT" -gt "$CRITICA
 # Spegnimento al 10%
 elif [ "$BAT_PERCENT" -le "$CRITICAL_BATTERY" ]; then
     if [ "$PREV_STATE" != "critical" ]; then
-        notify-send -u critical "Batteria critica" "Batteria al $BAT_PERCENT%! Spegnimento in 30 secondi..."
+        notify-send -u critical "Critical battery" "Battery at $BAT_PERCENT%! Shutting down in 30 seconds..."
         echo "critical" > "$STATE_FILE"
         sleep 30
-        # Non spegnere se nel frattempo è stato collegato il caricatore.
+        # Do not shut down if the charger has been connected in the meantime.
         BAT_STATUS=$(cat /sys/class/power_supply/BAT*/status 2>/dev/null || acpi -b | awk '{print $3}' | tr -d ',')
         if [[ "$BAT_STATUS" == "Discharging" ]]; then
             systemctl poweroff
@@ -62,5 +62,5 @@ else
     echo "" > "$STATE_FILE"
 fi
 
-# Output JSON per Waybar
+# JSON output for Waybar
 echo "{\"text\": \"$FORMAT\", \"tooltip\": \"$TOOLTIP\", \"class\": \"$BAT_STATUS\"}"

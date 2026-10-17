@@ -8,11 +8,12 @@ import sys
 import shlex
 
 from dock_settings import load_settings, ssh_command, pi_command
+import dock_anki
 
 ROOT = Path(__file__).resolve().parent.parent
-ICONS = {'t3code': '󰨞', 'pi': 'π', 'octo': '󰣀', 'slack': '󰒱', 'obsidian': '󱓧'}
-NAMES = {'t3code': 'T3 Code', 'pi': 'Pi', 'octo': 'SSH · Octo', 'slack': 'Slack', 'obsidian': 'Obsidian'}
-CLASSES = {'t3code': 'com.t3tools.T3Code', 'pi': 'waybar-pi', 'octo': 'waybar-octo', 'slack': 'waybar-slack', 'obsidian': 'obsidian'}
+ICONS = {'t3code': '󰨞', 'pi': 'π', 'octo': '󰣀', 'slack': '󰒱', 'obsidian': '󱓧', 'anki': '★'}
+NAMES = {'t3code': 'T3 Code', 'pi': 'Pi', 'octo': 'SSH · Octo', 'slack': 'Slack', 'obsidian': 'Obsidian', 'anki': 'Anki'}
+CLASSES = {'t3code': 'com.t3tools.T3Code', 'pi': 'waybar-pi', 'octo': 'waybar-octo', 'slack': 'waybar-slack', 'obsidian': 'obsidian', 'anki': 'anki'}
 
 
 def processes():
@@ -29,6 +30,8 @@ def processes():
 
 
 def is_active(app, settings):
+    if app == 'anki':
+        return bool(dock_anki.instances())
     if app == 'obsidian':
         try:
             apps = subprocess.check_output(['flatpak', 'ps', '--columns=application'], text=True, stderr=subprocess.DEVNULL, timeout=2)
@@ -75,6 +78,14 @@ def focus(app):
 
 def main():
     action, app = sys.argv[1:]
+    if app == 'anki':
+        if action == 'status':
+            print(json.dumps(dock_anki.status(), ensure_ascii=False))
+        elif action == 'launch':
+            dock_anki.menu(focus)
+        else:
+            raise ValueError('Unknown Anki action: ' + action)
+        return
     settings = load_settings(ROOT)
     if action == "ssh":
         command = ["kitty", "--class", CLASSES["octo"], "--title", "SSH · Octo", "--start-as", "normal", "--", *ssh_command(settings)]
@@ -107,7 +118,7 @@ def main():
     logdir = Path(os.environ.get('XDG_STATE_HOME', str(Path.home() / '.local/state'))) / 'waybar'
     logdir.mkdir(parents=True, exist_ok=True)
     if app == 'pi':
-        # Le regole di avvio si applicano a questa finestra, senza modificare Hyprland.
+        # Startup rules apply to this window without modifying Hyprland.
         shell_command = shlex.join(command) + ' >> ' + shlex.quote(str(logdir / 'pi.log')) + ' 2>&1'
         delimiter = '='
         while ']' + delimiter + ']' in shell_command:
@@ -127,5 +138,5 @@ if __name__ == '__main__':
         if len(sys.argv) > 1 and sys.argv[1] == 'status':
             print(json.dumps({'text': ICONS.get(sys.argv[-1], '?'), 'class': 'inactive', 'tooltip': str(error)}))
         else:
-            subprocess.run(['notify-send', 'Waybar · errore launcher', str(error)], check=False)
+            subprocess.run(['notify-send', 'Waybar · launcher error', str(error)], check=False)
         sys.exit(1)

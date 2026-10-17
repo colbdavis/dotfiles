@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Seleziona logo SVG e colore secondo lo stato del modulo."""
+"""Select the SVG logo and color according to the module status."""
 import html
 import json
 from pathlib import Path

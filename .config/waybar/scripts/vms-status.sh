@@ -29,5 +29,5 @@ if [ "$CLASS" != "$PREV_STATE" ]; then
     echo "$CLASS" > "$STATE_FILE"
 fi
 
-# Output JSON per Waybar
+# JSON output for Waybar
 echo "{\"text\": \"$TEXT\", \"class\": \"$CLASS\", \"tooltip\": \"Running VMs: $RUNNING_VMS\"}"

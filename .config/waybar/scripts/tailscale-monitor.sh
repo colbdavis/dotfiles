@@ -26,7 +26,7 @@ fi
 # Ottieni stato attuale
 CURR_STATE=$(get_status)
 
-# Se lo stato è cambiato, invia notifica
+# Send a notification if the status has changed
 if [ "$PREV_STATE" != "$CURR_STATE" ] && [ -n "$PREV_STATE" ]; then
     case "$CURR_STATE" in
         "connected")

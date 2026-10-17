@@ -1,4 +1,4 @@
-"""Legge le impostazioni .env come dati, senza interpretazione shell."""
+"""Read .env settings as data, without shell interpretation."""
 import json
 import re
 import shlex
