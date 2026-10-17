@@ -1,6 +1,6 @@
 # Dock Waybar
 
-Loghi SVG monocromatici da 16 px in celle 28 × 28 px, grigio lavanda #c5bdd9 a riposo e verde Dracula #50fa7b quando attive. Tray accanto ai launcher, LocalSend scompare dal dock mentre il processo è attivo. VM resta come icona con stato nel tooltip. Tailscale e Proton sono verdi quando connessi; Syncthing, T3 e Pi quando in esecuzione; Octo durante la sessione SSH; Slack mentre il browser della web app è in esecuzione.
+Loghi SVG monocromatici da 16 px in celle 28 × 28 px, grigio lavanda #c5bdd9 a riposo e verde Dracula #50fa7b quando attive. Tray accanto ai launcher, LocalSend scompare dal dock mentre il processo è attivo. VM resta come icona con stato nel tooltip. Tailscale e Proton sono verdi quando connessi; Syncthing, T3 e Pi quando in esecuzione; Octo durante la sessione SSH; Slack mentre il browser della web app è in esecuzione; Obsidian mentre il Flatpak è in esecuzione. Obsidian si avvia con `flatpak run md.obsidian.Obsidian`; un click porta in primo piano una finestra già aperta.
 
 ## Configurazione personale
 

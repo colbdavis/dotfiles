@@ -12,6 +12,7 @@
         "image#pi",
         "image#octo",
         "image#slack",
+        "image#obsidian",
         "tray",
         "image#vms",
         "custom/timer"
@@ -146,5 +147,11 @@
         "size": 16,
         "interval": 4,
         "on-click": "virt-manager"
+    },
+    "image#obsidian": {
+        "exec": "~/.config/waybar/scripts/dock-icons.py obsidian",
+        "size": 16,
+        "interval": 3,
+        "on-click": "~/.config/waybar/scripts/dock-apps.py launch obsidian"
     }
 }

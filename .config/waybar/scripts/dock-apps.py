@@ -10,9 +10,9 @@ import shlex
 from dock_settings import load_settings, ssh_command, pi_command
 
 ROOT = Path(__file__).resolve().parent.parent
-ICONS = {'t3code': '󰨞', 'pi': 'π', 'octo': '󰣀', 'slack': '󰒱'}
-NAMES = {'t3code': 'T3 Code', 'pi': 'Pi', 'octo': 'SSH · Octo', 'slack': 'Slack'}
-CLASSES = {'t3code': 'com.t3tools.T3Code', 'pi': 'waybar-pi', 'octo': 'waybar-octo', 'slack': 'waybar-slack'}
+ICONS = {'t3code': '󰨞', 'pi': 'π', 'octo': '󰣀', 'slack': '󰒱', 'obsidian': '󱓧'}
+NAMES = {'t3code': 'T3 Code', 'pi': 'Pi', 'octo': 'SSH · Octo', 'slack': 'Slack', 'obsidian': 'Obsidian'}
+CLASSES = {'t3code': 'com.t3tools.T3Code', 'pi': 'waybar-pi', 'octo': 'waybar-octo', 'slack': 'waybar-slack', 'obsidian': 'obsidian'}
 
 
 def processes():
@@ -29,6 +29,12 @@ def processes():
 
 
 def is_active(app, settings):
+    if app == 'obsidian':
+        try:
+            apps = subprocess.check_output(['flatpak', 'ps', '--columns=application'], text=True, stderr=subprocess.DEVNULL, timeout=2)
+            return 'md.obsidian.Obsidian' in apps.splitlines()
+        except (OSError, subprocess.SubprocessError):
+            return False
     if app == 'slack':
         try:
             clients = json.loads(subprocess.check_output(['hyprctl', 'clients', '-j'], stderr=subprocess.DEVNULL, timeout=2))
@@ -54,7 +60,7 @@ def is_active(app, settings):
 def focus(app):
     try:
         clients = json.loads(subprocess.check_output(['hyprctl', 'clients', '-j'], stderr=subprocess.DEVNULL, timeout=2))
-        match = next((c for c in clients if c.get('class') == CLASSES[app]), None)
+        match = next((c for c in clients if c.get('class') == CLASSES[app] or (app == 'obsidian' and c.get('class', '').lower() in ('obsidian', 'md.obsidian.obsidian'))), None)
         if match:
             if app == 'pi':
                 window = 'address:' + match['address']
@@ -90,6 +96,8 @@ def main():
         command = settings['t3code_command']
     elif app == 'pi':
         command = pi_command(settings)
+    elif app == 'obsidian':
+        command = ['flatpak', 'run', 'md.obsidian.Obsidian']
     elif app == 'octo':
         command = [str(ROOT / 'scripts/octo-ssh.sh')]
     else:
