@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+"""Speak Mandarin using Google's online TTS; requires ffmpeg and ffplay."""
+import argparse
+import pathlib
+import shutil
+import subprocess
+import tempfile
+import urllib.parse
+import urllib.request
+
+
+def fetch(text, destination):
+    query = urllib.parse.urlencode({"ie": "UTF-8", "client": "tw-ob", "tl": "zh-CN", "q": text})
+    request = urllib.request.Request(
+        "https://translate.google.com/translate_tts?" + query,
+        headers={"User-Agent": "Mozilla/5.0"},
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        data = response.read()
+        if "audio" not in response.headers.get("Content-Type", "") or not data:
+            raise RuntimeError("TTS service did not return audio")
+    destination.write_bytes(data)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("text", nargs="*", help="Mandarin text (Chinese characters recommended)")
+    parser.add_argument("--four-tones", action="store_true", help="Separate mā, má, mǎ, mà examples: 妈 麻 马 骂")
+    parser.add_argument("-o", "--output", type=pathlib.Path, help="Save MP3 instead of playing")
+    args = parser.parse_args()
+    if args.four_tones and args.text:
+        parser.error("use either text or --four-tones")
+    if not args.four_tones and not args.text:
+        parser.error("provide Mandarin text or --four-tones")
+    if not shutil.which("ffmpeg"):
+        parser.error("ffmpeg is required")
+    with tempfile.TemporaryDirectory(prefix="mandarin-") as tmp:
+        root = pathlib.Path(tmp)
+        texts = ["妈", "麻", "马", "骂"] if args.four_tones else [" ".join(args.text)]
+        clips = []
+        for index, text in enumerate(texts):
+            clip = root / f"{index}.mp3"
+            fetch(text, clip)
+            clips.append(clip)
+        result = root / "result.mp3"
+        command = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y"]
+        for clip in clips:
+            command += ["-i", str(clip)]
+        filters = []
+        for index in range(len(clips)):
+            filters.append(f"[{index}:a]aresample=24000,aformat=channel_layouts=mono,apad=pad_dur=0.8[a{index}]")
+        filters.append("".join(f"[a{i}]" for i in range(len(clips))) + f"concat=n={len(clips)}:v=0:a=1[out]")
+        command += ["-filter_complex", ";".join(filters), "-map", "[out]", "-codec:a", "libmp3lame", "-q:a", "2", str(result)]
+        subprocess.run(command, check=True)
+        if args.output:
+            destination = args.output.expanduser().absolute()
+            # Refuse to silently replace an existing recording.
+            with destination.open("xb") as output, result.open("rb") as source:
+                shutil.copyfileobj(source, output)
+            print(f"Saved {destination}")
+        else:
+            subprocess.run(["ffplay", "-nodisp", "-autoexit", "-loglevel", "error", str(result)], check=True)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (OSError, RuntimeError, subprocess.CalledProcessError) as error:
+        raise SystemExit(f"Error: {error}")
