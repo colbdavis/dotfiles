@@ -1,0 +1,49 @@
+/* Undercover start menu. Independent of ~/.config/wofi/style.css. */
+
+* {
+    font-family: "Adwaita Sans", sans-serif;
+    font-size: 11pt;
+}
+
+window {
+    background-color: rgba(36, 36, 36, 0.97);
+    border: 1px solid #3d3d3d;
+    border-radius: 10px;
+}
+
+#outer-box { margin: 18px; }
+
+#input {
+    margin: 0 0 14px 0;
+    padding: 8px 12px;
+    color: #ffffff;
+    background-color: #1f1f1f;
+    border: 1px solid #3d3d3d;
+    border-bottom: 2px solid #4cc2ff;
+    border-radius: 6px;
+}
+
+#inner-box,
+#scroll { background-color: transparent; }
+
+/* Neutralise the GTK theme's selection colours. */
+*:selected,
+flowboxchild,
+#entry,
+#text,
+#img {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-image: none;
+    background-color: transparent;
+}
+
+#entry {
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+flowboxchild:selected #entry,
+#entry:selected { background-color: rgba(255, 255, 255, 0.08); }
+
+#text { margin-left: 10px; color: #ffffff; }

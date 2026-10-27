@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+# Undercover mode: Windows-like look on top of the normal Hyprland session.
+#
+#   undercover [toggle|on|off|status|menu]
+#
+# Normal mode is never edited: undercover settings live in ~/.config/undercover
+# and are applied at runtime. "off" restores Hyprland by reloading the normal
+# hyprland.lua and restarts the normal Waybar with its original command line.
+# State is kept in $XDG_RUNTIME_DIR, so a reboot or new session always starts
+# in normal mode.
+
+set -euo pipefail
+
+CONF="$HOME/.config/undercover"
+STATE="${XDG_RUNTIME_DIR:-/run/user/$UID}/undercover"
+SESSION="${HYPRLAND_INSTANCE_SIGNATURE:?not running inside Hyprland}"
+
+notify() { notify-send -a undercover -t 1500 "$1" 2>/dev/null || true; }
+
+# Active only if enabled in this very Hyprland instance.
+is_on() { [[ -f "$STATE/active" && "$(<"$STATE/active")" == "$SESSION" ]]; }
+
+pid_alive() { [[ -n "${1:-}" ]] && kill -0 "$1" 2>/dev/null; }
+
+undercover_waybar_pid() {
+    local pid
+    pid="$(cat "$STATE/waybar.pid" 2>/dev/null || true)"
+    if pid_alive "$pid" && tr '\0' ' ' <"/proc/$pid/cmdline" | grep -q "$CONF/waybar"; then
+        echo "$pid"
+    fi
+}
+
+normal_waybar_pids() {
+    local pid
+    for pid in $(pgrep -x waybar || true); do
+        tr '\0' ' ' <"/proc/$pid/cmdline" | grep -q "$CONF/waybar" || echo "$pid"
+    done
+}
+
+apply_hypr() {
+    local out
+    out="$(hyprctl eval "dofile(os.getenv('HOME') .. '/.config/undercover/hypr.lua')" 2>&1)" || true
+    if [[ "$out" != "ok" ]]; then
+        hyprctl reload config-only >/dev/null
+        echo "undercover: hypr.lua failed: $out" >&2
+        notify "Undercover: hypr.lua failed"
+        exit 1
+    fi
+}
+
+start_undercover_waybar() {
+    [[ -n "$(undercover_waybar_pid)" ]] && return
+    setsid waybar -c "$CONF/waybar/config.jsonc" -s "$CONF/waybar/style.css" \
+        >"$STATE/waybar.log" 2>&1 </dev/null &
+    echo $! >"$STATE/waybar.pid"
+}
+
+enable() {
+    mkdir -p "$STATE"
+    if is_on; then
+        # Idempotent: re-apply after e.g. a manual `hyprctl reload`.
+        apply_hypr
+        start_undercover_waybar
+        return
+    fi
+    rm -f "$STATE"/*
+
+    apply_hypr
+
+    local pid
+    for pid in $(normal_waybar_pids); do
+        tr '\0' '\n' <"/proc/$pid/cmdline" >"$STATE/normal-waybar.cmd"
+        kill "$pid"
+    done
+    start_undercover_waybar
+
+    echo "$SESSION" >"$STATE/active"
+    notify "Undercover ON"
+}
+
+disable() {
+    local pid
+    pid="$(undercover_waybar_pid)"
+    if pid_alive "$pid"; then
+        kill "$pid"
+    fi
+
+    hyprctl reload config-only >/dev/null
+
+    # Relaunch the normal bar exactly as it was, through Hyprland, like autostart.
+    if [[ -z "$(normal_waybar_pids)" ]]; then
+        local -a cmd=(waybar)
+        [[ -s "$STATE/normal-waybar.cmd" ]] && mapfile -t cmd <"$STATE/normal-waybar.cmd"
+        setsid "${cmd[@]}" >/dev/null 2>&1 </dev/null &
+    fi
+
+    rm -rf "$STATE"
+    notify "Undercover OFF"
+}
+
+# Start menu: wofi runs with its own GTK profile so ~/.config/gtk-3.0 does not
+# restyle it; the chosen app is launched with the normal environment.
+menu() {
+    if pgrep -x wofi >/dev/null; then
+        pkill -x wofi
+        return
+    fi
+    local cmd
+    cmd="$(XDG_CONFIG_HOME="$CONF/xdg" wofi --show drun \
+        --conf "$CONF/wofi/config" --style "$CONF/wofi/style.css")" || return 0
+    cmd="$(sed -E 's/ ?%[fFuUdDnNickvm]//g' <<<"$cmd")"  # drop .desktop field codes
+    [[ -n "$cmd" ]] && setsid sh -c "exec $cmd" >/dev/null 2>&1 </dev/null &
+}
+
+case "${1:-toggle}" in
+    menu) menu ;;
+    on) enable ;;
+    off) disable ;;
+    toggle) if is_on; then disable; else enable; fi ;;
+    status) if is_on; then echo on; else echo off; fi ;;
+    *) echo "usage: undercover [toggle|on|off|status|menu]" >&2; exit 2 ;;
+esac

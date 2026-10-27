@@ -1,0 +1,57 @@
+// Undercover taskbar. Module definitions come from the normal config through
+// "include"; only layout and the extra modules below are undercover-specific.
+{
+    "include": ["~/.config/waybar/config.jsonc"],
+    "name": "undercover",
+    "position": "bottom",
+    "height": 48,
+    "spacing": 4,
+    "modules-left": [
+        "memory",
+        "custom/timer"
+    ],
+    "modules-center": [
+        "custom/start",
+        "ext/workspaces",
+        "image#t3code",
+        "image#pi",
+        "image#octo",
+        "image#slack",
+        "image#obsidian",
+        "image#anki",
+        "image#vms"
+    ],
+    "modules-right": [
+        "image#tailscale",
+        "image#syncthing",
+        "image#protonvpn",
+        "image#localsend",
+        "tray",
+        "custom/keymap",
+        "network",
+        "pulseaudio",
+        "custom/battery",
+        "clock",
+        "custom/notifications"
+    ],
+    "custom/start": {
+        "format": " ",
+        "tooltip-format": "Start",
+        "on-click": "~/.local/bin/undercover menu"
+    },
+    "clock": {
+        "format": "{:%H:%M\n%d/%m/%Y}",
+        "justify": "center",
+        "locale": "en_US.utf8",
+        "tooltip-format": "{:%A %d %B %Y}"
+    },
+    "custom/notifications": {
+        "format": "\udb80\udc9a",
+        "tooltip-format": "Notifications",
+        "on-click": "swaync-client -t -sw"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8
+    }
+}

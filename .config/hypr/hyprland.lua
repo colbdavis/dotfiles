@@ -205,6 +205,8 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.local/bin/ProfileChooser.sh"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(browser .. " --ProfileManager"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("~/.config/waybar/scripts/keymap.sh toggle"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo({ action = "toggle" }))
+-- Undercover mode (separate config in ~/.config/undercover).
+hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("~/.local/bin/undercover toggle"))
 
 -- Move focus with Super + h/down/k/l.
 hl.bind(mainMod .. " + h",    hl.dsp.focus({ direction = "left" }))

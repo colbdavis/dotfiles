@@ -1,0 +1,11 @@
+width=560
+height=470
+location=bottom
+yoffset=-60
+prompt=Search for apps, settings, and documents
+insensitive=true
+allow_images=true
+image_size=28
+hide_scroll=true
+no_actions=true
+drun-print_command=true
