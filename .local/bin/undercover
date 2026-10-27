@@ -15,7 +15,11 @@ CONF="$HOME/.config/undercover"
 STATE="${XDG_RUNTIME_DIR:-/run/user/$UID}/undercover"
 SESSION="${HYPRLAND_INSTANCE_SIGNATURE:?not running inside Hyprland}"
 
-notify() { notify-send -a undercover -t 1500 "$1" 2>/dev/null || true; }
+# notify <message> <on|off>; replaces the previous undercover notification.
+notify() {
+    notify-send -a undercover -t 1500 -i "$CONF/icons/undercover-$2.svg" \
+        -h string:x-canonical-private-synchronous:undercover "$1" 2>/dev/null || true
+}
 
 # Active only if enabled in this very Hyprland instance.
 is_on() { [[ -f "$STATE/active" && "$(<"$STATE/active")" == "$SESSION" ]]; }
@@ -43,7 +47,7 @@ apply_hypr() {
     if [[ "$out" != "ok" ]]; then
         hyprctl reload config-only >/dev/null
         echo "undercover: hypr.lua failed: $out" >&2
-        notify "Undercover: hypr.lua failed"
+        notify "Undercover: hypr.lua failed" off
         exit 1
     fi
 }
@@ -75,7 +79,7 @@ enable() {
     start_undercover_waybar
 
     echo "$SESSION" >"$STATE/active"
-    notify "Undercover ON"
+    notify "Undercover ON" on
 }
 
 disable() {
@@ -95,7 +99,7 @@ disable() {
     fi
 
     rm -rf "$STATE"
-    notify "Undercover OFF"
+    notify "Undercover OFF" off
 }
 
 # Start menu: wofi runs with its own GTK profile so ~/.config/gtk-3.0 does not
